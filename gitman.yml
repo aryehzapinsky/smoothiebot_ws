@@ -6,14 +6,14 @@ sources:
 
 - name: fetch_gazebo
   repo: https://github.com/fetchrobotics/fetch_gazebo.git
-  rev: master
+  rev: gazebo7
 - name: fetch_ros
   repo: https://github.com/fetchrobotics/fetch_ros.git
-  rev: master
+  rev: indigo-devel
 
 - name: geometric_shapes
   repo: https://github.com/ros-planning/geometric_shapes.git
-  rev: master
+  rev: kinetic-devel
 
 - name: moveit
   repo: https://github.com/ros-planning/moveit.git
