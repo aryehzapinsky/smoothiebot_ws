@@ -1,0 +1,46 @@
+location: src
+sources:
+- name: world_manager
+  repo: 'https://github.com/CRLab/world_manager.git'
+  rev: master
+
+- name: fetch_gazebo
+  repo: https://github.com/fetchrobotics/fetch_gazebo.git
+  rev: master
+- name: fetch_ros
+  repo: https://github.com/fetchrobotics/fetch_ros.git
+  rev: master
+
+- name: geometric_shapes
+  repo: https://github.com/ros-planning/geometric_shapes.git
+  rev: master
+
+- name: moveit
+  repo: https://github.com/ros-planning/moveit.git
+  rev: kinetic-devel
+- name: moveit_python
+  repo: https://github.com/mikeferguson/moveit_python.git
+  rev: master
+
+# I think this is a node manager
+- name: multimaster_fkie
+  repo: https://github.com/fkie/multimaster_fkie.git
+  rev: master
+- name: pr2_common
+  repo: https://github.com/PR2/pr2_common.git
+  rev: kinetic-devel
+
+- name: pr2_moveit_config
+  repo: https://github.com/davetcoleman/pr2_moveit_config.git
+  rev: master
+
+- name: robot_controllers
+  repo: https://github.com/fetchrobotics/robot_controllers.git
+  rev: indigo-devel
+
+- name: simple_grasping
+  repo: https://github.com/mikeferguson/simple_grasping.git
+  rev: master
+- name: grasping_msgs
+  repo: https://github.com/mikeferguson/grasping_msgs.git
+  rev: master

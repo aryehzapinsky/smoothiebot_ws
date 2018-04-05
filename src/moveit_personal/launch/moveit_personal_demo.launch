@@ -1,0 +1,8 @@
+<launch>
+
+        <include file="$(find pr2_moveit_config)/launch/demo.launch"/>
+
+        <node name="moveit_personal_demo" pkg="moveit_personal" type="moveit_personal_demo.py" respawn="false" output="screen">
+        </node>
+
+</launch>
