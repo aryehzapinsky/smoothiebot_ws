@@ -1,0 +1,3 @@
+Symlinking /home/student/smoothiebot_ws/devel/lib/pkgconfig/fetch_description.pc
+Symlinking /home/student/smoothiebot_ws/devel/share/fetch_description/cmake/fetch_descriptionConfig.cmake
+Symlinking /home/student/smoothiebot_ws/devel/share/fetch_description/cmake/fetch_descriptionConfig-version.cmake

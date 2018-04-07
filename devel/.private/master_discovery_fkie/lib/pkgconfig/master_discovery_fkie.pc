@@ -1,0 +1,8 @@
+prefix=/home/student/smoothiebot_ws/devel/.private/master_discovery_fkie
+
+Name: master_discovery_fkie
+Description: Description of master_discovery_fkie
+Version: 0.7.8
+Cflags: 
+Libs: -L/home/student/smoothiebot_ws/devel/.private/master_discovery_fkie/lib 
+Requires: multimaster_msgs_fkie std_srvs

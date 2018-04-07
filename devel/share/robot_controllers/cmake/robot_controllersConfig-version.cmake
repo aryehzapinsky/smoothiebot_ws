@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/robot_controllers/share/robot_controllers/cmake/robot_controllersConfig-version.cmake

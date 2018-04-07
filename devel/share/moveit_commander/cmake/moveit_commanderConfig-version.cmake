@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/moveit_commander/share/moveit_commander/cmake/moveit_commanderConfig-version.cmake

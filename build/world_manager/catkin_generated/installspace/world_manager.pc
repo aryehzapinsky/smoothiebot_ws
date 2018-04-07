@@ -1,0 +1,8 @@
+prefix=/home/student/smoothiebot_ws/install
+
+Name: world_manager
+Description: Description of world_manager
+Version: 2.0.0
+Cflags: 
+Libs: -L/home/student/smoothiebot_ws/install/lib 
+Requires: 

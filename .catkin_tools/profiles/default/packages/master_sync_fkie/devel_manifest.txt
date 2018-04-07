@@ -1,0 +1,5 @@
+multimaster_fkie/master_sync_fkie
+/home/student/smoothiebot_ws/devel/.private/master_sync_fkie/lib/pkgconfig/master_sync_fkie.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/master_sync_fkie.pc
+/home/student/smoothiebot_ws/devel/.private/master_sync_fkie/lib/python2.7/dist-packages/master_sync_fkie/__init__.py /home/student/smoothiebot_ws/devel/lib/python2.7/dist-packages/master_sync_fkie/__init__.py
+/home/student/smoothiebot_ws/devel/.private/master_sync_fkie/share/master_sync_fkie/cmake/master_sync_fkieConfig.cmake /home/student/smoothiebot_ws/devel/share/master_sync_fkie/cmake/master_sync_fkieConfig.cmake
+/home/student/smoothiebot_ws/devel/.private/master_sync_fkie/share/master_sync_fkie/cmake/master_sync_fkieConfig-version.cmake /home/student/smoothiebot_ws/devel/share/master_sync_fkie/cmake/master_sync_fkieConfig-version.cmake

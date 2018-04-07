@@ -1,0 +1,8 @@
+prefix=/home/student/smoothiebot_ws/install
+
+Name: fetch_description
+Description: Description of fetch_description
+Version: 0.7.13
+Cflags: 
+Libs: -L/home/student/smoothiebot_ws/install/lib 
+Requires: 

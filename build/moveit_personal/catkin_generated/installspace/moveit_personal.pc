@@ -1,0 +1,8 @@
+prefix=/home/student/smoothiebot_ws/install
+
+Name: moveit_personal
+Description: Description of moveit_personal
+Version: 0.1.0
+Cflags: -I/usr/include/eigen3
+Libs: -L/home/student/smoothiebot_ws/install/lib 
+Requires: moveit_core moveit_ros_planning_interface interactive_markers

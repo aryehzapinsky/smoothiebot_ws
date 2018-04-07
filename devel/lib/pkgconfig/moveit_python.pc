@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/moveit_python/lib/pkgconfig/moveit_python.pc

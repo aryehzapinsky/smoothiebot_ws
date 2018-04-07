@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/robot_controllers_msgs/share/common-lisp/ros/robot_controllers_msgs/msg/_package_QueryControllerStatesGoal.lisp

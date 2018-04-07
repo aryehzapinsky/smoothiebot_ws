@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/pr2_msgs/share/roseus/ros/pr2_msgs/msg/LaserScannerSignal.l

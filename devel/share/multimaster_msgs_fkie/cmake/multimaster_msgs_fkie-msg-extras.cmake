@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/multimaster_msgs_fkie/share/multimaster_msgs_fkie/cmake/multimaster_msgs_fkie-msg-extras.cmake

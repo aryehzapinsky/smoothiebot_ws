@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/pr2_msgs/share/pr2_msgs/cmake/pr2_msgsConfig-version.cmake

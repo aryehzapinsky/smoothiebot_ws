@@ -1,0 +1,4 @@
+moveit_personal
+/home/student/smoothiebot_ws/devel/.private/moveit_personal/lib/pkgconfig/moveit_personal.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/moveit_personal.pc
+/home/student/smoothiebot_ws/devel/.private/moveit_personal/share/moveit_personal/cmake/moveit_personalConfig-version.cmake /home/student/smoothiebot_ws/devel/share/moveit_personal/cmake/moveit_personalConfig-version.cmake
+/home/student/smoothiebot_ws/devel/.private/moveit_personal/share/moveit_personal/cmake/moveit_personalConfig.cmake /home/student/smoothiebot_ws/devel/share/moveit_personal/cmake/moveit_personalConfig.cmake

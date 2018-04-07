@@ -1,0 +1,5 @@
+fetch_ros/fetch_calibration
+/home/student/smoothiebot_ws/devel/.private/fetch_calibration/lib/pkgconfig/fetch_calibration.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/fetch_calibration.pc
+/home/student/smoothiebot_ws/devel/.private/fetch_calibration/bin/calibrate_robot /home/student/smoothiebot_ws/devel/bin/calibrate_robot
+/home/student/smoothiebot_ws/devel/.private/fetch_calibration/share/fetch_calibration/cmake/fetch_calibrationConfig-version.cmake /home/student/smoothiebot_ws/devel/share/fetch_calibration/cmake/fetch_calibrationConfig-version.cmake
+/home/student/smoothiebot_ws/devel/.private/fetch_calibration/share/fetch_calibration/cmake/fetch_calibrationConfig.cmake /home/student/smoothiebot_ws/devel/share/fetch_calibration/cmake/fetch_calibrationConfig.cmake

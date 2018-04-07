@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+# generated from catkin/python/catkin/environment_cache.py
+
+# based on a snapshot of the environment before and after calling the setup script
+# it emulates the modifications of the setup script without recurring computations
+
+# new environment variables
+
+# modified environment variables
+export CMAKE_PREFIX_PATH="/home/student/smoothiebot_ws/devel/.private/geometric_shapes:$CMAKE_PREFIX_PATH"
+export PATH="/home/student/smoothiebot_ws/devel/bin:$PATH"
+export PWD="/home/student/smoothiebot_ws/build/geometric_shapes"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/student/smoothiebot_ws/devel/.private/geometric_shapes/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/student/smoothiebot_ws/src/geometric_shapes:$ROS_PACKAGE_PATH"

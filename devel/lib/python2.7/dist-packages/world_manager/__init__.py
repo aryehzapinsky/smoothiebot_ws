@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/world_manager/lib/python2.7/dist-packages/world_manager/__init__.py

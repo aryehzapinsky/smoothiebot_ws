@@ -1,0 +1,4 @@
+launcher
+/home/student/smoothiebot_ws/devel/.private/launcher/lib/pkgconfig/launcher.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/launcher.pc
+/home/student/smoothiebot_ws/devel/.private/launcher/share/launcher/cmake/launcherConfig.cmake /home/student/smoothiebot_ws/devel/share/launcher/cmake/launcherConfig.cmake
+/home/student/smoothiebot_ws/devel/.private/launcher/share/launcher/cmake/launcherConfig-version.cmake /home/student/smoothiebot_ws/devel/share/launcher/cmake/launcherConfig-version.cmake

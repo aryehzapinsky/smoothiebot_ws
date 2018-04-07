@@ -1,0 +1,20 @@
+(cl:defpackage world_manager_msgs-srv
+  (:use )
+  (:export
+   "ADDBOX"
+   "<ADDBOX-REQUEST>"
+   "ADDBOX-REQUEST"
+   "<ADDBOX-RESPONSE>"
+   "ADDBOX-RESPONSE"
+   "ADDMESH"
+   "<ADDMESH-REQUEST>"
+   "ADDMESH-REQUEST"
+   "<ADDMESH-RESPONSE>"
+   "ADDMESH-RESPONSE"
+   "ADDTF"
+   "<ADDTF-REQUEST>"
+   "ADDTF-REQUEST"
+   "<ADDTF-RESPONSE>"
+   "ADDTF-RESPONSE"
+  ))
+

@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/world_manager/share/world_manager/cmake/world_managerConfig.cmake

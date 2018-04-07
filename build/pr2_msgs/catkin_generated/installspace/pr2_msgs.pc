@@ -1,0 +1,8 @@
+prefix=/home/student/smoothiebot_ws/install
+
+Name: pr2_msgs
+Description: Description of pr2_msgs
+Version: 1.12.1
+Cflags: -I/home/student/smoothiebot_ws/install/include
+Libs: -L/home/student/smoothiebot_ws/install/lib 
+Requires: std_msgs geometry_msgs

@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/master_sync_fkie/lib/pkgconfig/master_sync_fkie.pc

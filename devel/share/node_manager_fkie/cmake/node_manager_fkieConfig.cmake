@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/node_manager_fkie/share/node_manager_fkie/cmake/node_manager_fkieConfig.cmake

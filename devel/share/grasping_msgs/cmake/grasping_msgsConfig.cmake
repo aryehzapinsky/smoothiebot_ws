@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/grasping_msgs/share/grasping_msgs/cmake/grasping_msgsConfig.cmake

@@ -1,0 +1,1 @@
+/home/student/smoothiebot_ws/devel/.private/master_sync_fkie/lib/python2.7/dist-packages/master_sync_fkie/__init__.py

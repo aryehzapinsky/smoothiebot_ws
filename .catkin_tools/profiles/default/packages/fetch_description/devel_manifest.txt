@@ -1,0 +1,4 @@
+fetch_ros/fetch_description
+/home/student/smoothiebot_ws/devel/.private/fetch_description/lib/pkgconfig/fetch_description.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/fetch_description.pc
+/home/student/smoothiebot_ws/devel/.private/fetch_description/share/fetch_description/cmake/fetch_descriptionConfig.cmake /home/student/smoothiebot_ws/devel/share/fetch_description/cmake/fetch_descriptionConfig.cmake
+/home/student/smoothiebot_ws/devel/.private/fetch_description/share/fetch_description/cmake/fetch_descriptionConfig-version.cmake /home/student/smoothiebot_ws/devel/share/fetch_description/cmake/fetch_descriptionConfig-version.cmake
