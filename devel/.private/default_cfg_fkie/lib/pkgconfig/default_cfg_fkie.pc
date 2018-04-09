@@ -1,8 +1,0 @@
-prefix=/home/student/smoothiebot_ws/devel/.private/default_cfg_fkie
-
-Name: default_cfg_fkie
-Description: Description of default_cfg_fkie
-Version: 0.7.8
-Cflags: 
-Libs: -L/home/student/smoothiebot_ws/devel/.private/default_cfg_fkie/lib 
-Requires: multimaster_msgs_fkie roslaunch roslib rospy

@@ -1,5 +1,0 @@
-multimaster_fkie/master_discovery_fkie
-/home/student/smoothiebot_ws/devel/.private/master_discovery_fkie/lib/pkgconfig/master_discovery_fkie.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/master_discovery_fkie.pc
-/home/student/smoothiebot_ws/devel/.private/master_discovery_fkie/lib/python2.7/dist-packages/master_discovery_fkie/__init__.py /home/student/smoothiebot_ws/devel/lib/python2.7/dist-packages/master_discovery_fkie/__init__.py
-/home/student/smoothiebot_ws/devel/.private/master_discovery_fkie/share/master_discovery_fkie/cmake/master_discovery_fkieConfig.cmake /home/student/smoothiebot_ws/devel/share/master_discovery_fkie/cmake/master_discovery_fkieConfig.cmake
-/home/student/smoothiebot_ws/devel/.private/master_discovery_fkie/share/master_discovery_fkie/cmake/master_discovery_fkieConfig-version.cmake /home/student/smoothiebot_ws/devel/share/master_discovery_fkie/cmake/master_discovery_fkieConfig-version.cmake

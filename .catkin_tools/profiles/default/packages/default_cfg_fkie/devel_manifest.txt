@@ -1,5 +1,0 @@
-multimaster_fkie/default_cfg_fkie
-/home/student/smoothiebot_ws/devel/.private/default_cfg_fkie/lib/pkgconfig/default_cfg_fkie.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/default_cfg_fkie.pc
-/home/student/smoothiebot_ws/devel/.private/default_cfg_fkie/lib/python2.7/dist-packages/default_cfg_fkie/__init__.py /home/student/smoothiebot_ws/devel/lib/python2.7/dist-packages/default_cfg_fkie/__init__.py
-/home/student/smoothiebot_ws/devel/.private/default_cfg_fkie/share/default_cfg_fkie/cmake/default_cfg_fkieConfig-version.cmake /home/student/smoothiebot_ws/devel/share/default_cfg_fkie/cmake/default_cfg_fkieConfig-version.cmake
-/home/student/smoothiebot_ws/devel/.private/default_cfg_fkie/share/default_cfg_fkie/cmake/default_cfg_fkieConfig.cmake /home/student/smoothiebot_ws/devel/share/default_cfg_fkie/cmake/default_cfg_fkieConfig.cmake

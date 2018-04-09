@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/master_discovery_fkie/lib/pkgconfig/master_discovery_fkie.pc

@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/moveit_personal/lib/pkgconfig/moveit_personal.pc

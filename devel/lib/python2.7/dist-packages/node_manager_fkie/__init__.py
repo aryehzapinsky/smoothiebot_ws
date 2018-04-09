@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/node_manager_fkie/lib/python2.7/dist-packages/node_manager_fkie/__init__.py

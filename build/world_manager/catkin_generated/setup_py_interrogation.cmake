@@ -1,6 +1,0 @@
-set(world_manager_SETUP_PY_VERSION "2.0.0")
-set(world_manager_SETUP_PY_SCRIPTS "")
-set(world_manager_SETUP_PY_PACKAGES "world_manager")
-set(world_manager_SETUP_PY_PACKAGE_DIRS "src/world_manager")
-set(world_manager_SETUP_PY_MODULES "")
-set(world_manager_SETUP_PY_MODULE_DIRS "")

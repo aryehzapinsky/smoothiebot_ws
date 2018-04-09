@@ -1,2 +1,0 @@
-set(world_manager_msgs_MESSAGE_FILES "/home/student/smoothiebot_ws/src/world_manager/world_manager_msgs/msg/SceneObject.msg;/home/student/smoothiebot_ws/src/world_manager/world_manager_msgs/msg/SceneBox.msg")
-set(world_manager_msgs_SERVICE_FILES "/home/student/smoothiebot_ws/src/world_manager/world_manager_msgs/srv/AddMesh.srv;/home/student/smoothiebot_ws/src/world_manager/world_manager_msgs/srv/AddTF.srv;/home/student/smoothiebot_ws/src/world_manager/world_manager_msgs/srv/AddBox.srv")

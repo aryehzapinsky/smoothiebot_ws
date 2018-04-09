@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/robot_controllers_msgs/include/robot_controllers_msgs/QueryControllerStatesGoal.h

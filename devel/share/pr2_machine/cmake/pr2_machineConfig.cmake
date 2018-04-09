@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/pr2_machine/share/pr2_machine/cmake/pr2_machineConfig.cmake

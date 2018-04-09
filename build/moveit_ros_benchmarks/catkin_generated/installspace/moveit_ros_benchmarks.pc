@@ -1,8 +1,0 @@
-prefix=/home/student/smoothiebot_ws/install
-
-Name: moveit_ros_benchmarks
-Description: Description of moveit_ros_benchmarks
-Version: 0.9.11
-Cflags: -I/home/student/smoothiebot_ws/install/include
-Libs: -L/home/student/smoothiebot_ws/install/lib -lmoveit_ros_benchmarks
-Requires: moveit_ros_planning moveit_ros_warehouse roscpp

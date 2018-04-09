@@ -1,8 +1,0 @@
-prefix=/home/student/smoothiebot_ws/devel/.private/grasping_msgs
-
-Name: grasping_msgs
-Description: Description of grasping_msgs
-Version: 0.3.1
-Cflags: -I/home/student/smoothiebot_ws/devel/.private/grasping_msgs/include
-Libs: -L/home/student/smoothiebot_ws/devel/.private/grasping_msgs/lib 
-Requires: geometry_msgs moveit_msgs sensor_msgs shape_msgs

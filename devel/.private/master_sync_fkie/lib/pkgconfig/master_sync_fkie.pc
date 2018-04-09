@@ -1,8 +1,0 @@
-prefix=/home/student/smoothiebot_ws/devel/.private/master_sync_fkie
-
-Name: master_sync_fkie
-Description: Description of master_sync_fkie
-Version: 0.7.8
-Cflags: 
-Libs: -L/home/student/smoothiebot_ws/devel/.private/master_sync_fkie/lib 
-Requires: master_discovery_fkie multimaster_msgs_fkie

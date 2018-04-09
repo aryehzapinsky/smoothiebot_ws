@@ -1,4 +1,0 @@
-pr2_moveit_config
-/home/student/smoothiebot_ws/devel/.private/pr2_moveit_config/lib/pkgconfig/pr2_moveit_config.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/pr2_moveit_config.pc
-/home/student/smoothiebot_ws/devel/.private/pr2_moveit_config/share/pr2_moveit_config/cmake/pr2_moveit_configConfig-version.cmake /home/student/smoothiebot_ws/devel/share/pr2_moveit_config/cmake/pr2_moveit_configConfig-version.cmake
-/home/student/smoothiebot_ws/devel/.private/pr2_moveit_config/share/pr2_moveit_config/cmake/pr2_moveit_configConfig.cmake /home/student/smoothiebot_ws/devel/share/pr2_moveit_config/cmake/pr2_moveit_configConfig.cmake

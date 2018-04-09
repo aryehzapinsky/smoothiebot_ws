@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/master_discovery_fkie/lib/python2.7/dist-packages/master_discovery_fkie/__init__.py

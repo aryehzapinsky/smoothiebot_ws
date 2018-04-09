@@ -1,5 +1,0 @@
-world_manager/world_manager
-/home/student/smoothiebot_ws/devel/.private/world_manager/lib/pkgconfig/world_manager.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/world_manager.pc
-/home/student/smoothiebot_ws/devel/.private/world_manager/lib/python2.7/dist-packages/world_manager/__init__.py /home/student/smoothiebot_ws/devel/lib/python2.7/dist-packages/world_manager/__init__.py
-/home/student/smoothiebot_ws/devel/.private/world_manager/share/world_manager/cmake/world_managerConfig-version.cmake /home/student/smoothiebot_ws/devel/share/world_manager/cmake/world_managerConfig-version.cmake
-/home/student/smoothiebot_ws/devel/.private/world_manager/share/world_manager/cmake/world_managerConfig.cmake /home/student/smoothiebot_ws/devel/share/world_manager/cmake/world_managerConfig.cmake

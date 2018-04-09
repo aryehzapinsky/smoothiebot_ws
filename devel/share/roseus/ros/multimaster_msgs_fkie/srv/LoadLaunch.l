@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/multimaster_msgs_fkie/share/roseus/ros/multimaster_msgs_fkie/srv/LoadLaunch.l

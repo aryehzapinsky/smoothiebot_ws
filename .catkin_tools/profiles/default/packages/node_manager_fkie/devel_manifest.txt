@@ -1,6 +1,0 @@
-multimaster_fkie/node_manager_fkie
-/home/student/smoothiebot_ws/devel/.private/node_manager_fkie/lib/pkgconfig/node_manager_fkie.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/node_manager_fkie.pc
-/home/student/smoothiebot_ws/devel/.private/node_manager_fkie/lib/python2.7/dist-packages/node_manager_fkie/__init__.py /home/student/smoothiebot_ws/devel/lib/python2.7/dist-packages/node_manager_fkie/__init__.py
-/home/student/smoothiebot_ws/devel/.private/node_manager_fkie/bin/node_manager /home/student/smoothiebot_ws/devel/bin/node_manager
-/home/student/smoothiebot_ws/devel/.private/node_manager_fkie/share/node_manager_fkie/cmake/node_manager_fkieConfig-version.cmake /home/student/smoothiebot_ws/devel/share/node_manager_fkie/cmake/node_manager_fkieConfig-version.cmake
-/home/student/smoothiebot_ws/devel/.private/node_manager_fkie/share/node_manager_fkie/cmake/node_manager_fkieConfig.cmake /home/student/smoothiebot_ws/devel/share/node_manager_fkie/cmake/node_manager_fkieConfig.cmake

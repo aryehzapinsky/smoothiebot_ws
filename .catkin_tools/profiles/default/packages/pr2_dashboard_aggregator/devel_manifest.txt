@@ -1,4 +1,0 @@
-pr2_common/pr2_dashboard_aggregator
-/home/student/smoothiebot_ws/devel/.private/pr2_dashboard_aggregator/lib/pkgconfig/pr2_dashboard_aggregator.pc /home/student/smoothiebot_ws/devel/lib/pkgconfig/pr2_dashboard_aggregator.pc
-/home/student/smoothiebot_ws/devel/.private/pr2_dashboard_aggregator/share/pr2_dashboard_aggregator/cmake/pr2_dashboard_aggregatorConfig-version.cmake /home/student/smoothiebot_ws/devel/share/pr2_dashboard_aggregator/cmake/pr2_dashboard_aggregatorConfig-version.cmake
-/home/student/smoothiebot_ws/devel/.private/pr2_dashboard_aggregator/share/pr2_dashboard_aggregator/cmake/pr2_dashboard_aggregatorConfig.cmake /home/student/smoothiebot_ws/devel/share/pr2_dashboard_aggregator/cmake/pr2_dashboard_aggregatorConfig.cmake

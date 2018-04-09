@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/world_manager_msgs/share/world_manager_msgs/cmake/world_manager_msgsConfig-version.cmake

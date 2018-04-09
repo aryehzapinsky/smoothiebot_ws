@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/default_cfg_fkie/lib/pkgconfig/default_cfg_fkie.pc

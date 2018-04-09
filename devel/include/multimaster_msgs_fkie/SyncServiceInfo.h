@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/multimaster_msgs_fkie/include/multimaster_msgs_fkie/SyncServiceInfo.h

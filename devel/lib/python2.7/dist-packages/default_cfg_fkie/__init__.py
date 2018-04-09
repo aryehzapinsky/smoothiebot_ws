@@ -1,1 +1,0 @@
-/home/student/smoothiebot_ws/devel/.private/default_cfg_fkie/lib/python2.7/dist-packages/default_cfg_fkie/__init__.py

@@ -1,8 +1,0 @@
-prefix=/home/student/smoothiebot_ws/devel/.private/fetch_gazebo_demo
-
-Name: fetch_gazebo_demo
-Description: Description of fetch_gazebo_demo
-Version: 0.8.0
-Cflags: 
-Libs: -L/home/student/smoothiebot_ws/devel/.private/fetch_gazebo_demo/lib 
-Requires: 
