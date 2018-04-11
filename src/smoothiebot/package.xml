@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package format="1">
+    <name>smoothiebot</name>
+    <version>0.0.0</version>
+    <description>Code for smoothiebot</description>
+
+    <maintainer email="aryeh@TODO.com">Aryeh Zapinsky</maintainer>
+    <maintainer email="geffen@TODO.com">Geffen Huberman</maintainer>
+    <maintainer email="leyla@TODO.com">Leyla Mizrachi</maintainer>
+
+    <license>TODO</license>
+
+    <build_depend>curpp</build_depend>
+    <build_depend>geometry_msgs</build_depend>
+    <build_depend>grasping_msgs</build_depend>
+
+    <run_depend>curpp</run_depend>
+    <run_depend>geometry_msgs</run_depend>
+    <run_depend>grasping_msgs</run_depend>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <export>
+
+    </export>
+
+</package>
