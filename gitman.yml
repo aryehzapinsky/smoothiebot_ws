@@ -44,3 +44,18 @@ sources:
 - name: grasping_msgs
   repo: https://github.com/mikeferguson/grasping_msgs.git
   rev: master
+
+- name: curpp
+  repo: https://github.com/CRLab/curpp.git
+  rev: master
+
+- name: grasit_interface
+  repo: https://github.com/graspit-simulator/graspit_interface.git
+  rev: master
+- name: graspit_commander
+  repo: https://github.com/graspit-simulator/graspit_commander.git
+  rev: master
+
+- name: pr2_simulator
+  repo: https://github.com/PR2/pr2_simulator.git
+  rev: kinetic-devel
