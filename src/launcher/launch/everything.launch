@@ -1,5 +1,8 @@
 <launch>
 
+        <include file="$(find fetch_gazebo)/launch/simulation.launch"></include>
+        <include file="$(find fetch_moveit_config)/launch/move_group.launch"></include>
+
         <group ns="world_manager">
                <!--Load the walls for your workspace-->
                <rosparam command="load" file="$(find launcher)/configs/smoothie.workspace.yaml"/>
@@ -7,9 +10,7 @@
                <node name="world_manager" pkg="world_manager" type="world_manager_server.py" output="screen"/>
        </group>
 
-        <include file="$(find pr2_moveit_config)/launch/demo.launch"/>
-
-        <node name="moveit_personal_demo" pkg="moveit_personal" type="moveit_personal_demo.py" respawn="false" output="screen">
-        </node>
+        <!--node name="moveit_personal_demo" pkg="moveit_personal" type="moveit_personal_demo.py" respawn="false" output="screen"-->
+        <!--/node-->
 
 </launch>

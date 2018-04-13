@@ -21,6 +21,10 @@ sources:
 - name: moveit_python
   repo: https://github.com/mikeferguson/moveit_python.git
   rev: master
+- name: moveit_tutorials
+  repo: https://github.com/ros-planning/moveit_tutorials.git
+  rev: kinetic-devel
+
 
 # I think this is a node manager
 - name: multimaster_fkie
@@ -29,10 +33,6 @@ sources:
 - name: pr2_common
   repo: https://github.com/PR2/pr2_common.git
   rev: kinetic-devel
-
-- name: pr2_moveit_config
-  repo: https://github.com/davetcoleman/pr2_moveit_config.git
-  rev: master
 
 - name: robot_controllers
   repo: https://github.com/fetchrobotics/robot_controllers.git
@@ -55,7 +55,3 @@ sources:
 - name: graspit_commander
   repo: https://github.com/graspit-simulator/graspit_commander.git
   rev: master
-
-- name: pr2_simulator
-  repo: https://github.com/PR2/pr2_simulator.git
-  rev: kinetic-devel
