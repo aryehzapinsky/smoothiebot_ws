@@ -5,6 +5,9 @@ import pyquaternion
 import numpy as np
 import graspit_interface.msg
 import curpp
+import tf
+import moveit_commander
+import world_manager
 #import state
 #from skills import SkillManager
 #TODO STEP BY STEP:
@@ -59,9 +62,9 @@ def run_recognition():
 	#make a python list with the positions of block_recognition
 
 	obj1 = geometry_msgs.msg.PoseStamped()
-	obj1.pose.position.x = 100
-	obj1.pose.position.y = 100
-	obj1.pose.position.z = 100
+	obj1.pose.position.x = 0.5
+	obj1.pose.position.y = 0.5
+	obj1.pose.position.z = 0.5
 	obj1.pose.orientation.x = 0
 	obj1.pose.orientation.y = 0
 	obj1.pose.orientation.z = 0
@@ -98,16 +101,24 @@ class GraspManager:
 
         # Pull all params off param server
         self.grasp_approach_tran_frame = rospy.get_param("grasp_approach_tran_frame")
+        print("did grasp_approach")
         self.world_frame = rospy.get_param("world_frame")
+        print("did world_frame")
         self.arm_move_group_name = rospy.get_param("arm_move_group_name")
+        print("did arm_move_group_name")
         self.gripper_move_group_name = rospy.get_param("gripper_move_group_name")
+        print("gripper_move_group_name")
 
         self.analyzer_planner_id = rospy.get_param("analyzer_planner_id")
+        print("did analyzer planner id")
         self.executor_planner_id = rospy.get_param("executor_planner_id")
+        print ("did executer planner id")
         self.allowed_analyzing_time = rospy.get_param("allowed_analyzing_time")
+        print ("did allowed_analyze_time")
         self.allowed_execution_time = rospy.get_param("allowed_execution_time")
-
+        print ("allowed_execution_time")
         # Initialize ros service interfaces
+        #THIS IS WHERE IT GETS STUCK
         self.grasping_controller = curpp.MoveitPickPlaceInterface(
             arm_name=self.arm_move_group_name,
             gripper_name=self.gripper_move_group_name,
@@ -117,10 +128,14 @@ class GraspManager:
             allowed_analyzing_time=self.allowed_analyzing_time,
             allowed_execution_time=self.allowed_execution_time
         )
-
+        
+        print ("grasping_controller")
         self.scene = moveit_commander.PlanningSceneInterface()
-        self.world_manager_client = world_manager.world_manager_client.WorldManagerClient()
+        print("scene")
+        self.world_manager_client = world_manager.world_manager_client
+        print("world manager")
         self.tf_listener = tf.TransformListener()
+        print ("was able to initialize ")
 
     def graspit_grasp_to_moveit_grasp(self, object_name, graspit_grasp):
         # type: (str, graspit_interface.msg.Grasp) -> moveit_msgs.msg.Grasp
@@ -262,12 +277,16 @@ class GraspManager:
 
 if __name__ =="__main__":
 	detected_blocks = select_block()
+        print("did select_block")
+        rospy.init_node("start")
+        print("did init")
 	manager = GraspManager()
+        print("Did GraspManager")
 	#plan grasp reachability
 	for block in detected_blocks:
 		grasps = plan_grasps(block.pose.position.x, block.pose.position.y, block.pose.position.z)
-		manager.analyze_grasp_reachability(block, grasps)
-	
+		manager.analyze_grasp_reachability("block", grasps[0])
+	print("Did blocks")
  
 	
 	#construct_graspit_grasp()	
