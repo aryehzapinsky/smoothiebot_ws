@@ -62,9 +62,10 @@ def run_recognition():
 	#make a python list with the positions of block_recognition
 
 	obj1 = geometry_msgs.msg.PoseStamped()
+	obj1.header.frame_id = "/world"
 	obj1.pose.position.x = 0.5
 	obj1.pose.position.y = 0.5
-	obj1.pose.position.z = 0.5
+	obj1.pose.position.z = 0.0
 	obj1.pose.orientation.x = 0
 	obj1.pose.orientation.y = 0
 	obj1.pose.orientation.z = 0
