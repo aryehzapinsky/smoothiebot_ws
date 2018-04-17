@@ -2,64 +2,26 @@
 
         <include file="$(find fetch_gazebo)/launch/simulation.launch"></include>
         <include file="$(find fetch_moveit_config)/launch/move_group.launch"></include>
-	 <!-- Trajectory Planners -->
-    <param name="grasp_approach_tran_frame" type="string" value="/approach_tran" />
-    <param name="world_frame" type="string" value="/world" />
 
-    <param name="arm_move_group_name" type="string" value="arm" />
-    <param name="gripper_move_group_name" type="string" value="gripper" />
-
-    <param name="analyzer_planner_id" type="string" value="[PRMkConfigDefault]" />
-    <param name="executor_planner_id" type="string" value="[BiRRTkConfigDefault]" />
-    <param name="allowed_analyzing_time" type="double" value="2" />
-    <param name="allowed_execution_time" type="double" value="8" />
-
-    <param name="final_block_position_x" type="double" value="0.2" />
-    <param name="final_block_position_y" type="double" value="0.3" />
-    <param name="final_block_position_z" type="double" value="0.2" />
-
-    <param name="pre_grasp_approach_direction_frame_id" type="string" value="/approach_tran" />
-    <param name="pre_grasp_approach_direction_x" type="double" value="0" />
-    <param name="pre_grasp_approach_direction_y" type="double" value="0" />    <param name="pre_grasp_approach_direction_z" type="double" value="1" />
-
-    <param name="post_grasp_retreat_direction_frame_id" type="string" value="/world" />
-    <param name="post_grasp_retreat_direction_x" type="double" value="0" />
-    <param name="post_grasp_retreat_direction_y" type="double" value="0" />    <param name="post_grasp_retreat_direction_z" type="double" value="1" />
-
-    <rosparam param="pre_grasp_goal_point_effort">[50.0, 50.0]</rosparam>
-    <rosparam param="pre_grasp_goal_point_positions">[0.0, 0.0]</rosparam>    <param name="pre_grasp_goal_point_time_from_start_secs" type="double" value="0" />
-    <rosparam param="pre_grasp_joint_names">[m1n6s200_joint_finger_1, m1n6s200_joint_finger_2]</rosparam>
-
-    <rosparam param="grasp_goal_point_effort">[50.0, 50.0]</rosparam>
-    <rosparam param="grasp_goal_point_positions">[1.2, 1.2]</rosparam>
-    <param name="grasp_goal_point_time_from_start_secs" type="double" value="0" />
-
-    <rosparam param="grasp_posture_joint_names">[m1n6s200_joint_finger_1, m1n6s200_joint_finger_2]</rosparam>
-
-    <param name="pre_grasp_approach_min_distance" type="double" value="0.05" />
-    <param name="pre_grasp_approach_desired_distance" type="double" value="0.1" />
-    <param name="post_grasp_retreat_min_distance" type="double" value="0.05" />
-    <param name="post_grasp_retreat_desired_distance" type="double" value="0.1" />
-
-    <param name="max_contact_force" type="double" value="-1" />
-
-    <node name="crui_manager" pkg="crui_manager" type="crui_node.py" output="screen" >
-        <remap from="/joint_states"   to="/m1n6s200_driver/out/joint_state" />
-    </node>
-
-<node pkg="tf" type="static_transform_publisher" name="hand_to_approach" args= "0, 0, -0.12, 3.14159, 3.14159, 0 wrist_roll_link approach_tran 100" />
-
-    <!-- Graspit Interface -->
-    <include file="$(find graspit_interface)/launch/graspit_interface.launch"/>
+        <include file="$(find launcher)/launch/parameter_setting.launch"></include>
 
         <group ns="world_manager">
                <!--Load the walls for your workspace-->
                <rosparam command="load" file="$(find launcher)/configs/smoothie.workspace.yaml"/>
 
                <node name="world_manager" pkg="world_manager" type="world_manager_server.py" output="screen"/>
-       </group>
+        </group>
 
-        <!--node name="moveit_personal_demo" pkg="moveit_personal" type="moveit_personal_demo.py" respawn="false" output="screen"-->
-        <!--/node-->
+        <!-- RViz -->
+        <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find launcher)/configs/config.rviz" 
+              output="screen">
+        </node>
+
+        <!-- Add random fruits -->
+        <node name="fruit_adder" pkg="smoothiebot" type="add_random_fruits.py" output="screen"></node>
+
+        <!-- Graspit Interface -->
+        <include file="$(find graspit_interface)/launch/graspit_interface.launch"/>
+        
 
 </launch>
