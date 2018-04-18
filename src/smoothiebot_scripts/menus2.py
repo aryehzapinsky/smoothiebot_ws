@@ -21,79 +21,6 @@ import world_manager
 #use curpp to execute the grasp (there is code in skills.py --> execute_grasps; ALSO make sure the object was added to the moveit_scene
 #ANOTHER REPO TO LOOK AT: github.com/CRLab/world_manager -> when David gets an object, he adds it to the environment through world_manager; give it a mesh, and it will automatically add it for you (#should move it up with pick(), place() it on top of the blender and release()) 
 
-def construct_graspit_grasp(position, orientation):
-    graspit_grasp_msg = graspit_interface.msg.Grasp()
-    pose = geometry_msgs.msg.Pose()
-    pose.position = position
-    pose.orientation = orientation
-    graspit_grasp_msg.pose = pose
-    return graspit_grasp_msg
-
-def plan_grasps(x=0, y=0, z=0.080):
-    position = geometry_msgs.msg.Point(x, y, z)
-
-    normal_orientation = pyquaternion.Quaternion(x=0, y=0, z=0, w=1)
-    rotated_orientation = pyquaternion.Quaternion(axis=[1, 0, 0], angle=np.pi/2)
-    rotated_orientation = rotated_orientation * normal_orientation
-
-    geom_orient = geometry_msgs.msg.Quaternion(x=normal_orientation[0], y=normal_orientation[1], z=normal_orientation[2], w=normal_orientation[3])
-    geom_orient_rot = geometry_msgs.msg.Quaternion(x=rotated_orientation[0], y=rotated_orientation[1], z=rotated_orientation[2], w=rotated_orientation[3])
-
-    grasps = list()
-    grasps.append(construct_graspit_grasp(position, geom_orient))
-    grasps.append(construct_graspit_grasp(position, geom_orient_rot))
-
-    return grasps
-
-def select_block():
-    # type: (state.CRUIState, curpp.skills.SkillManager) -> ()
-    rospy.loginfo("Entering select_block")
-    # Assign currently selected block to variable
- #   skill = SkillManager()
-    detected_objects = run_recognition()
-    return detected_objects
-
-def run_recognition():
-	# return detected blocks for fixed locations of fruits
-        rospy.loginfo("Running recognition")
-
-        #self.world_manager_client.clear_objects()
-	
-	#make a python list with the positions of block_recognition
-
-	obj1 = geometry_msgs.msg.PoseStamped()
-	obj1.header.frame_id = "/world"
-	obj1.pose.position.x = 0.5
-	obj1.pose.position.y = 0.5
-	obj1.pose.position.z = 0.0
-	obj1.pose.orientation.x = 0
-	obj1.pose.orientation.y = 0
-	obj1.pose.orientation.z = 0
-	obj1.pose.orientation.w = 0
-	#obj2 = geometry_msg.msg.PoseStamped()
-        detected_blocks = []
-	detected_blocks.append(obj1)
-
-	#block_recognition.find_blocks()
-        # type: detected_blocks -> typing.List[block_recognition_msgs.msg.DetectedBlock]
-	#import geometry_msg.msg 
-	#pose_stamped = geometry_msg.msg.PoseStamped().pose.position.x
-        if len(detected_blocks) == 0:
-            rospy.loginfo("Detected no blocks. No work done.")
-            return []
-
-        rospy.loginfo("Detected {} blocks".format(len(detected_blocks)))
-
-     #   for detected_block in detected_blocks:
-            # Add all blocks to the scene
-     #       self.world_manager_client.add_box(detected_block.unique_block_name,
-      #                                        detected_block.pose_stamped,
-       #                                       detected_block.edge_length,
-        #                                      detected_block.edge_length,
-         #                                     detected_block.edge_length)
-
-        # Return all detected blocks
-        return detected_blocks
 class GraspManager:
 
     def __init__(self):
@@ -102,24 +29,24 @@ class GraspManager:
 
         # Pull all params off param server
         self.grasp_approach_tran_frame = rospy.get_param("grasp_approach_tran_frame")
-        print("did grasp_approach")
+     
         self.world_frame = rospy.get_param("world_frame")
-        print("did world_frame")
+
         self.arm_move_group_name = rospy.get_param("arm_move_group_name")
-        print("did arm_move_group_name")
+
         self.gripper_move_group_name = rospy.get_param("gripper_move_group_name")
-        print("gripper_move_group_name")
+
 
         self.analyzer_planner_id = rospy.get_param("analyzer_planner_id")
-        print("did analyzer planner id")
+
         self.executor_planner_id = rospy.get_param("executor_planner_id")
-        print ("did executer planner id")
+
         self.allowed_analyzing_time = rospy.get_param("allowed_analyzing_time")
-        print ("did allowed_analyze_time")
+
         self.allowed_execution_time = rospy.get_param("allowed_execution_time")
-        print ("allowed_execution_time")
-        # Initialize ros service interfaces
-        #THIS IS WHERE IT GETS STUCK
+
+
+
         self.grasping_controller = curpp.MoveitPickPlaceInterface(
             arm_name=self.arm_move_group_name,
             gripper_name=self.gripper_move_group_name,
@@ -130,13 +57,88 @@ class GraspManager:
             allowed_execution_time=self.allowed_execution_time
         )
         
-        print ("grasping_controller")
+
         self.scene = moveit_commander.PlanningSceneInterface()
-        print("scene")
+
         self.world_manager_client = world_manager.world_manager_client
-        print("world manager")
+
         self.tf_listener = tf.TransformListener()
-        print ("was able to initialize ")
+
+    def construct_graspit_grasp(self, position, orientation):
+        graspit_grasp_msg = graspit_interface.msg.Grasp()
+        pose = geometry_msgs.msg.Pose()
+        pose.position = position
+        pose.orientation = orientation
+        graspit_grasp_msg.pose = pose
+        return graspit_grasp_msg
+
+    def plan_grasps(self, x=0, y=0, z=0.080):
+        position = geometry_msgs.msg.Point(x, y, z)
+
+        normal_orientation = pyquaternion.Quaternion(x=0, y=0, z=0, w=1)
+        rotated_orientation = pyquaternion.Quaternion(axis=[1, 0, 0], angle=np.pi/2)
+        rotated_orientation = rotated_orientation * normal_orientation
+
+        geom_orient = geometry_msgs.msg.Quaternion(x=normal_orientation[0], y=normal_orientation[1], z=normal_orientation[2], w=normal_orientation[3])
+        geom_orient_rot = geometry_msgs.msg.Quaternion(x=rotated_orientation[0], y=rotated_orientation[1], z=rotated_orientation[2], w=rotated_orientation[3])
+
+        grasps = list()
+        grasps.append(self.construct_graspit_grasp(position, geom_orient))
+        grasps.append(self.construct_graspit_grasp(position, geom_orient_rot))
+
+        return grasps
+
+    def select_block(self):
+    # type: (state.CRUIState, curpp.skills.SkillManager) -> ()
+        rospy.loginfo("Entering select_block")
+    # Assign currently selected block to variable
+ #   skill = SkillManager()
+
+        apple_pose_stamped = self.fill_pose_stamped(.4, .2, .5, 0, 0, 0, 1.0)
+        self.world_manager_client.add_mesh("apple", mesh_filepath='/home/student/smoothiebot_ws/FruitPlys/apple.ply', pose_stamped=apple_pose_stamped)
+    
+        banana_pose_stamped = self.fill_pose_stamped(.4, -.2, .5, 0, 0, 0, 1.0)
+        self.world_manager_client.add_mesh("banana", mesh_filepath='/home/student/smoothiebot_ws/FruitPlys/banana.ply', pose_stamped=banana_pose_stamped)
+    
+ 
+        detected_objects = [("apple", apple_pose_stamped), ("banana", banana_pose_stamped)]
+        return detected_objects
+
+    def fill_pose_stamped(self, x, y, z, ox, oy, oz, ow):
+	# return detected blocks for fixed locations of fruits
+            rospy.loginfo("Running recognition")
+
+        #self.world_manager_client.clear_objects()
+	
+	#make a python list with the positions of block_recognition
+
+	    obj1 = geometry_msgs.msg.PoseStamped()
+	    obj1.header.frame_id = "base_link"
+	    obj1.pose.position.x = x
+	    obj1.pose.position.y = y
+	    obj1.pose.position.z = z
+	    obj1.pose.orientation.x = ox
+	    obj1.pose.orientation.y = oy
+	    obj1.pose.orientation.z = oz
+	    obj1.pose.orientation.w = ow
+
+	#block_recognition.find_blocks()
+        # type: detected_blocks -> typing.List[block_recognition_msgs.msg.DetectedBlock]
+	#import geometry_msg.msg 
+	#pose_stamped = geometry_msg.msg.PoseStamped().pose.position.x
+
+#        rospy.loginfo("Detected {} blocks".format(len(detected_blocks)))
+
+     #   for detected_block in detected_blocks:
+            # Add all blocks to the scene
+     #       self.world_manager_client.add_box(detected_block.unique_block_name,
+      #                                        detected_block.pose_stamped,
+       #                                       detected_block.edge_length,
+        #                                      detected_block.edge_length,
+         #                                     detected_block.edge_length)
+
+        # Return all detected blocks
+            return obj1 
 
     def graspit_grasp_to_moveit_grasp(self, object_name, graspit_grasp):
         # type: (str, graspit_interface.msg.Grasp) -> moveit_msgs.msg.Grasp
@@ -196,7 +198,7 @@ class GraspManager:
 
         block_names = self.scene.get_attached_objects().keys()
         self.grasping_controller.detach_all_blocks(block_names)
-
+	print("names", block_names)
         moveit_grasp_msg = self.graspit_grasp_to_moveit_grasp(object_name, graspit_grasp)
         success, pick_result = self.grasping_controller.analyze_moveit_grasp(object_name, moveit_grasp_msg)
 
@@ -277,17 +279,14 @@ class GraspManager:
         return True
 
 if __name__ =="__main__":
-	detected_blocks = select_block()
-        print("did select_block")
-        rospy.init_node("start")
-        print("did init")
+        rospy.init_node("base")	
 	manager = GraspManager()
-        print("Did GraspManager")
+	detected_blocks = manager.select_block()
 	#plan grasp reachability
 	for block in detected_blocks:
-		grasps = plan_grasps(block.pose.position.x, block.pose.position.y, block.pose.position.z)
-		manager.analyze_grasp_reachability("block", grasps[0])
-	print("Did blocks")
+		grasps = manager.plan_grasps(block[1].pose.position.x, block[1].pose.position.y, block[1].pose.position.z)
+		manager.analyze_grasp_reachability(block[0], grasps[0])
+
  
 	
 	#construct_graspit_grasp()	

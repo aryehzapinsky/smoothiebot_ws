@@ -22,11 +22,11 @@ if __name__ == "__main__":
     print("World manager client created")
 
     apple_pose_stamped = fill_pose_stamped(.4, .2, .5, 0, 0, 0, 1.0)
-    wm.add_mesh("apple", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitPlys/apple.ply', pose_stamped=apple_pose_stamped)
+    wm.add_mesh("apple", mesh_filepath='/home/student/smoothiebot_ws/FruitPlys/apple.ply', pose_stamped=apple_pose_stamped)
     print("add banana")
 
-    banana_pose_stamped = fill_pose_stamped(.4, -.2, .5, 1.0, 0, 0, 1.0)
-    wm.add_mesh("banana", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitPlys/banana.ply', pose_stamped=banana_pose_stamped)
+    banana_pose_stamped = fill_pose_stamped(.4, -.2, .5, 0, 0, 0, 1.0)
+    wm.add_mesh("banana", mesh_filepath='/home/student/smoothiebot_ws/FruitPlys/banana.ply', pose_stamped=banana_pose_stamped)
 
     # Need to scale orange file properly
     #orange_pose_stamped = fill_pose_stamped(.5, 0, .5, 0, 0, 0, 1.0)
