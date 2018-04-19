@@ -1,6 +1,7 @@
 <launch>
 
-        <include file="$(find fetch_gazebo)/launch/simulation.launch"></include>
+        <include file="$(find launcher)/launch/simulation.launch">
+        </include>
         <include file="$(find fetch_moveit_config)/launch/move_group.launch"></include>
 
         <include file="$(find launcher)/launch/parameter_setting.launch"></include>
