@@ -1,0 +1,7 @@
+<visual name="visual">
+        <geometry>
+                <mesh>
+                        <uri>model://apple/meshes/apple.dae</uri>
+                </mesh>
+        </geometry>
+</visual>

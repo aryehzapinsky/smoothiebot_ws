@@ -2,7 +2,7 @@
 
 import world_manager
 import geometry_msgs.msg
-
+import rospy
 
 def fill_pose_stamped(x, y, z, ox, oy, oz, ow):
     pose_stamped = geometry_msgs.msg.PoseStamped()
@@ -18,6 +18,9 @@ def fill_pose_stamped(x, y, z, ox, oy, oz, ow):
     return pose_stamped
 
 if __name__ == "__main__":
+    rospy.init_node("object_spawner")
+    rospy.wait_for_service("/world_manager/clear_objects")
+
     wm = world_manager.world_manager_client
     print("World manager client created")
 
