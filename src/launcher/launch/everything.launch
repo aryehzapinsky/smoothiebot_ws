@@ -23,6 +23,5 @@
 
         <!-- Graspit Interface -->
         <include file="$(find graspit_interface)/launch/graspit_interface.launch"/>
-        
 
 </launch>
