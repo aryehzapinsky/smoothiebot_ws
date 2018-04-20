@@ -24,12 +24,22 @@ if __name__ == "__main__":
     wm = world_manager.world_manager_client
     print("World manager client created")
 
+<<<<<<< HEAD
     apple_pose_stamped = fill_pose_stamped(.4, .2, .5, 0, 0, 0, 1.0)
     wm.add_mesh("apple", mesh_filepath='/home/student/smoothiebot_ws/FruitPlys/apple.ply', pose_stamped=apple_pose_stamped)
     print("add banana")
 
     banana_pose_stamped = fill_pose_stamped(.4, -.2, .5, 0, 0, 0, 1.0)
     wm.add_mesh("banana", mesh_filepath='/home/student/smoothiebot_ws/FruitPlys/banana.ply', pose_stamped=banana_pose_stamped)
+=======
+    apple_pose_stamped = fill_pose_stamped(0.696731, 0.014137, 0.77531, 1.58409, -0.039766, 0.000459, 1.0)
+    wm.add_mesh("apple", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitPlys/apple.ply', pose_stamped=apple_pose_stamped)
+    print("apple has been added")
+
+    banana_pose_stamped = fill_pose_stamped(0.633429, 0.193047, 0.784009, 1.56044, -0.003598, 0.000204, 1.0)
+    wm.add_mesh("banana", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitDae/banana.dae', pose_stamped=banana_pose_stamped)
+    print("banana has been added")
+>>>>>>> da438975026d9bd13f5e671490b7d8fcfdc1414a
 
     # Need to scale orange file properly
     #orange_pose_stamped = fill_pose_stamped(.5, 0, .5, 0, 0, 0, 1.0)

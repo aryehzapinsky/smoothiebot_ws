@@ -198,8 +198,8 @@ class GraspManager:
 
         block_names = self.scene.get_attached_objects().keys()
         self.grasping_controller.detach_all_blocks(block_names)
-	print("names", block_names)
         moveit_grasp_msg = self.graspit_grasp_to_moveit_grasp(object_name, graspit_grasp)
+	print(moveit_grasp_msg)
         success, pick_result = self.grasping_controller.analyze_moveit_grasp(object_name, moveit_grasp_msg)
 
         rospy.loginfo("Able to execute grasp with grasp id {} after analysis: {}".format(moveit_grasp_msg.id, success))
@@ -281,11 +281,15 @@ class GraspManager:
 if __name__ =="__main__":
         rospy.init_node("base")	
 	manager = GraspManager()
-	detected_blocks = manager.select_block()
+	#import IPython
+	#IPython.embed()	
+	detected_blocks = manager.scene.get_object_poses(manager.scene.get_known_object_names())
+#	print(detected_blocks.values()[0])
+#	print(type(detected_blocks.values()[0]))
 	#plan grasp reachability
-	for block in detected_blocks:
-		grasps = manager.plan_grasps(block[1].pose.position.x, block[1].pose.position.y, block[1].pose.position.z)
-		manager.analyze_grasp_reachability(block[0], grasps[0])
+	for block, val in detected_blocks.items():
+		grasps = manager.plan_grasps(val.position.x, val.position.y, val.position.z)
+		manager.analyze_grasp_reachability(block, grasps[0])
 
  
 	
