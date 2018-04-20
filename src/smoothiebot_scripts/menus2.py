@@ -284,11 +284,12 @@ if __name__ =="__main__":
 	#import IPython
 	#IPython.embed()	
 	detected_blocks = manager.scene.get_object_poses(manager.scene.get_known_object_names())
-#	print(detected_blocks.values()[0])
+	print(detected_blocks.values()[0])
 #	print(type(detected_blocks.values()[0]))
 	#plan grasp reachability
 	for block, val in detected_blocks.items():
 		grasps = manager.plan_grasps(val.position.x, val.position.y, val.position.z)
+		print("GRASPS", grasps)
 		manager.analyze_grasp_reachability(block, grasps[0])
 
  
