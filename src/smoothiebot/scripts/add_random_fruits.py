@@ -43,6 +43,7 @@ if __name__ == "__main__":
     wm = world_manager.world_manager_client
     print("World manager client created")
 
+
     listener = tf.listener.TransformListener()
     listener.waitForTransform("/base_link", "/world", rospy.Time(), rospy.Duration(4.0))
     #apple_pose_stamped = fill_pose_stamped(0.696731, 0.014137, 0.77531, 0.71031, -0.01339, 0.013910, 0.70362)
