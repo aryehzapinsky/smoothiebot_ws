@@ -7,9 +7,9 @@ walls:
     qy: 0
     qz: 0
     qw: 1
-    x: 0.5
-    y: 0.3
-    z: -0.0255
+    x: 0.89
+    y: -0.055
+    z: 0.0
     frame_id: world
   - name: "wall"
     x_thickness: 0.05
@@ -19,7 +19,7 @@ walls:
     qy: 0
     qz: 0
     qw: 1
-    x: 0.6
-    y: -0.3
+    x: 2.6
+    y: 2.3
     z: -0.0255
     frame_id: world

@@ -4,7 +4,7 @@
         </include>
         <include file="$(find fetch_moveit_config)/launch/move_group.launch"></include>
 
-        <include file="$(find launcher)/launch/parameter_setting.launch"></include>
+        <!--include file="$(find launcher)/launch/parameter_setting.launch"--><!--/include-->
 
         <group ns="world_manager">
                <!--Load the walls for your workspace-->
@@ -18,6 +18,9 @@
               output="screen">
         </node>
 
+        <!-- Add world frame -->
+        <node name="world_base_link_transform" pkg="smoothiebot" type="world_transform.py" output="screen"></node>
+        
         <!-- Add random fruits -->
         <node name="fruit_adder" pkg="smoothiebot" type="add_random_fruits.py" output="screen"></node>
 
