@@ -2,7 +2,8 @@
 
         <include file="$(find launcher)/launch/simulation.launch">
         </include>
-        <include file="$(find fetch_moveit_config)/launch/move_group.launch"></include>
+
+        <include file="$(find local_fetch_moveit_config)/launch/planning_execution.launch"></include>
 
         <!--include file="$(find launcher)/launch/parameter_setting.launch"--><!--/include-->
 

@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: fetch_description
+    relative_path: robots/fetch.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/fetch.srdf
+  CONFIG:
+    author_name: AZ
+    author_email: az@todo.todo
+    generated_timestamp: 1524458118
