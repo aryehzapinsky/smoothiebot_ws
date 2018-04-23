@@ -52,6 +52,6 @@ if __name__ == "__main__":
         fetch_pose = get_model_pose("fetch", "base_link")
         base_link_stamped = copy_to_pose_stamped(fetch_pose, "base_link")
         base_link_stamped = adjust_rotation(base_link_stamped)
-        print("~~~~\n{}\n~~~~\n".format(fetch_pose))
+        #print("~~~~\n{}\n~~~~\n".format(fetch_pose))
         wm.add_tf("world", base_link_stamped)
         r.sleep()
