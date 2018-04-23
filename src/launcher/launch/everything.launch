@@ -3,7 +3,9 @@
         <include file="$(find launcher)/launch/simulation.launch">
         </include>
 
-        <include file="$(find local_fetch_moveit_config)/launch/planning_execution.launch"></include>
+        <include file="$(find local_fetch_moveit_config)/launch/planning_execution.launch">
+                 <param name="config" value="$(find launcher)/configs/config.rviz"/>
+        </include>
 
         <!--include file="$(find launcher)/launch/parameter_setting.launch"--><!--/include-->
 
