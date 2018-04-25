@@ -38,6 +38,11 @@ def adjust_rotation(pose_stamped):
     pose_stamped.pose.orientation.y = rotated[1]
     pose_stamped.pose.orientation.z = rotated[2]
     pose_stamped.pose.orientation.w = rotated[3]
+
+    #pose_stamped.pose.position.x =  -pose_stamped.pose.position.x
+    #pose_stamped.pose.position.y =  -pose_stamped.pose.position.y
+    #pose_stamped.pose.position.z =  -pose_stamped.pose.position.z
+
     return pose_stamped
 
 if __name__ == "__main__":
@@ -47,11 +52,33 @@ if __name__ == "__main__":
     wm = world_manager.world_manager_client
     print("World manager client created")
 
-    r = rospy.Rate(10)
-    while not rospy.is_shutdown():
-        fetch_pose = get_model_pose("fetch", "base_link")
-        base_link_stamped = copy_to_pose_stamped(fetch_pose, "base_link")
-        base_link_stamped = adjust_rotation(base_link_stamped)
-        #print("~~~~\n{}\n~~~~\n".format(fetch_pose))
-        wm.add_tf("world", base_link_stamped)
-        r.sleep()
+    # fetch_pose = get_model_pose("fetch", "base_link")
+    # base_link_stamped = copy_to_pose_stamped(fetch_pose, "map")
+    # base_link_stamped = adjust_rotation(base_link_stamped)
+    # print("~~~~\n{}\n~~~~\n".format(fetch_pose))
+    # wm.add_tf("world", base_link_stamped)
+
+    fixed_point = geometry_msgs.msg.PoseStamped()
+    fixed_point.pose.position.x = 0
+    fixed_point.pose.position.y = 0
+    fixed_point.pose.position.z = 0
+    fixed_point.pose.orientation.x = 0
+    fixed_point.pose.orientation.y = 0
+    fixed_point.pose.orientation.z = 0
+    fixed_point.pose.orientation.w = 1
+    fixed_point.header.frame_id = 'fixed_point'
+
+    wm.add_tf("world", fixed_point)
+    print("fixed_point and world created")
+
+    wm.add_tf("map", base_link_stamped) #was world
+    print("added map to fixed_point")
+
+    # r = rospy.Rate(10)
+    # while not rospy.is_shutdown():
+    #     fetch_pose = get_model_pose("fetch", "base_link")
+    #     base_link_stamped = copy_to_pose_stamped(fetch_pose, "fixed_point") #originally was base_link
+    #     base_link_stamped = adjust_rotation(base_link_stamped)
+    #     #print("~~~~\n{}\n~~~~\n".format(fetch_pose))
+    #     wm.add_tf("map", base_link_stamped) #was world
+    #     r.sleep()

@@ -13,14 +13,14 @@ from moveit_python.geometry import rotate_pose_msg_by_euler_angles
 #from grasping_msgs.msg import FindGraspableObjectsAction, FindGraspableObjectsGoal
 from geometry_msgs.msg import PoseStamped
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
-from moveit_msgs.msg import PlaceLocation, MoveItErrorCodes
+from moveit_msgs.msg import PlaceLocation, MoveItErrorCodes, MoveGroupAction
 #from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
 
 # Move base using navigation stack
 class MoveBaseClient(object):
 
     def __init__(self):
-        self.client = actionlib.SimpleActionClient("move_base", MoveBaseAction)
+        self.client = actionlib.SimpleActionClient("move_group", MoveGroupAction)
         rospy.loginfo("Waiting for move_base...")
         self.client.wait_for_server()
 
