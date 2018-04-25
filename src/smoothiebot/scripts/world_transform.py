@@ -71,8 +71,19 @@ if __name__ == "__main__":
     wm.add_tf("world", fixed_point)
     print("fixed_point and world created")
 
+    fetch_pose = get_model_pose("fetch", "base_link")
+    base_link_stamped = copy_to_pose_stamped(fetch_pose, "fixed_point") #originally was base_link
+    base_link_stamped = adjust_rotation(base_link_stamped)
+    #print("~~~~\n{}\n~~~~\n".format(fetch_pose))
     wm.add_tf("map", base_link_stamped) #was world
     print("added map to fixed_point")
+
+    fetch_pose = get_model_pose("fetch", "base_link")
+    base_link_stamped = copy_to_pose_stamped(fetch_pose, "fixed_point") #originally was base_link
+    base_link_stamped = adjust_rotation(base_link_stamped)
+    #print("~~~~\n{}\n~~~~\n".format(fetch_pose))
+    wm.add_tf("base_link", base_link_stamped) #was world
+    print("added base_link to fixed_point")
 
     # r = rospy.Rate(10)
     # while not rospy.is_shutdown():
