@@ -55,6 +55,7 @@ def fill_pose_stamped_from_tf(tf, frame_id):
     pose_stamped.pose.orientation.y = o[1]
     pose_stamped.pose.orientation.z = o[2]
     pose_stamped.pose.orientation.w = o[3]
+
     pose_stamped.header.frame_id = frame_id
 
     return pose_stamped
