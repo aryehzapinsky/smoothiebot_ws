@@ -1,5 +1,5 @@
 <launch>
-
+        
         <include file="$(find launcher)/launch/simulation.launch">
         </include>
 
@@ -10,19 +10,10 @@
                  <param name="config" value="$(find launcher)/configs/config.rviz"/>
         </include>
 
-        <!--include file="$(find fetch_navigation)/launch/fetch_nav.launch"--> <!--/include-->
         <!-- Navigation stuff -->
-        
-        <!-- Navigation parameter files -->
-        <arg name="move_base_include" default="$(find fetch_navigation)/launch/include/move_base.launch.xml" />
-        <arg name="amcl_include" default="$(find fetch_navigation)/launch/include/amcl.launch.xml" />
-
-
-          <!-- move the robot -->
-          <!--include file="$(arg move_base_include)" -->
-          <!--arg name="name" value="fetch" /-->
-          <!--/include-->
-
+        <include file="$(find fetch_navigation)/launch/fetch_nav.launch">
+                 <arg name="map_file" value="$(find launcher)/maps/four_bricks_map.yaml" />
+        </include>
 
 
         <include file="$(find launcher)/launch/parameter_setting.launch"></include>
@@ -35,15 +26,15 @@
         </group>
 
         <!-- RViz -->
-        <node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find launcher)/configs/config.rviz" 
-              output="screen">
-        </node>
+        <!--node name="$(anon rviz)" pkg="rviz" type="rviz" respawn="false" args="-d $(find launcher)/configs/config.rviz" 
+              output="screen"-->
+        <!--/node-->
 
         <!-- Add world frame -->
         <!--node name="world_base_link_transform" pkg="smoothiebot" type="world_transform.py" output="screen"--><!--/node-->
         
         <!-- Add random fruits -->
-        <node name="fruit_adder" pkg="smoothiebot" type="add_random_fruits.py" output="screen"></node>
+        <!--node name="fruit_adder" pkg="smoothiebot" type="add_random_fruits.py" output="screen"--><!--/node-->
 
         <!-- Graspit Interface -->
         <!--include file="$(find graspit_interface)/launch/graspit_interface.launch"/-->

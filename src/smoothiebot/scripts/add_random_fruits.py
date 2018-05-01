@@ -44,16 +44,16 @@ if __name__ == "__main__":
     print("World manager client created")
 
 
-    listener = tf.listener.TransformListener()
-    listener.waitForTransform("/base_link", "/world", rospy.Time(), rospy.Duration(4.0))
+    #listener = tf.listener.TransformListener()
+    #listener.waitForTransform("/base_link", "/world", rospy.Time(), rospy.Duration(4.0))
     #apple_pose_stamped = fill_pose_stamped(0.696731, 0.014137, 0.77531, 0.71031, -0.01339, 0.013910, 0.70362)
     apple_pose = world_transform.get_model_pose("apple")
-    apple_pose_stamped = copy_to_pose_stamped(apple_pose, "world")
+    apple_pose_stamped = copy_to_pose_stamped(apple_pose, "base_link")
     wm.add_mesh("apple", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitPlys/apple.ply', pose_stamped=apple_pose_stamped)
     print("apple has been added")
 
     #banana_pose_stamped = fill_pose_stamped(0.633429, 0.193047, 0.784009, 0.702476, -0.002126, 0.002249, 0.711700)
-    banana_pose_stamped = copy_to_pose_stamped(world_transform.get_model_pose("banana"), "world")
+    banana_pose_stamped = copy_to_pose_stamped(world_transform.get_model_pose("banana"), "base_link")
     wm.add_mesh("banana", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitDae/banana.dae', pose_stamped=banana_pose_stamped)
     print("banana has been added")
 
