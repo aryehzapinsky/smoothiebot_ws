@@ -6,6 +6,8 @@ import rospy
 import moveit_commander
 import moveit_msgs.msg
 import geometry_msgs.msg
+import gazebo_msgs.msg
+import gazebo_msgs.srv
 
 import world_transform
 import add_random_fruits as arf
@@ -27,20 +29,25 @@ if __name__ =="__main__":
     close_to_apple = arf.fill_pose_stamped(0.723647664107, -0.0174719277117, 1.0161340941, -0.44066149931, 0.286331143742, 0.325645149208, 0.785994373992).pose
     even_closer_to_apple = arf.fill_pose_stamped(0.6296755692, -0.0468162925487, 1.02655575018, -0.597539306458, 0.39758362117, 0.3876658001, 0.578436918642)
     close_to_banana = arf.fill_pose_stamped(0.621898782615, 0.142218505018, 1.00211452973, -0.645718145491, 0.202840384379, 0.692499557478, 0.249696251357).pose
+    again_close_to_banana = arf.fill_pose_stamped(0.645024582709, 0.170187109247, 0.985221906163, 0.70351734002, 0.0382096274149, -0.709143958482, 0.0267996793403).pose
+    banana_pose = arf.fill_pose_stamped(0.63339442474, 0.193017947477, 0.7840020828, 0.704620305121, -0.00260277732341, 0.00270930930753, 0.709574598477).pose
 
-# again close to banana
-# position:
-#   x: 0.645024582709
-#   y: 0.170187109247
-#   z: 0.985221906163
-# orientation:
-#   x: 0.70351734002
-#   y: 0.0382096274149
-#   z: -0.709143958482
-#   w: 0.0267996793403
+
+    group.set_pose_target(up_top)
+    plan_up = group.plan()
+    group.execute(plan_up)
+    group.clear_pose_targets()
+
+    # Set robot to be dead in front of table
+    sms = gazebo_msgs.srv.SetModelStateRequest()
+    sms.model_state.model_name = 'fetch'
+    sms.model_state.pose.orientation.w = 1
+    world_transform.set_model_pose(sms)
+
 
 # position of banana
-  # position:
+
+# position:
   #   x: 0.63339442474
   #   y: 0.193017947477
   #   z: 0.7840020828
@@ -50,22 +57,18 @@ if __name__ =="__main__":
   #   z: 0.00270930930753
   #   w: 0.709574598477
 
-
-
     display_trajectory_publisher = rospy.Publisher(
         '/move_group/display_planned_path',
         moveit_msgs.msg.DisplayTrajectory,
         queue_size=20)
 
-    apple_pose = world_transform.get_model_pose("apple")
-
-    group.set_pose_target(up_top)
-    plan1 = group.plan()
+    trans = transfrom_listener.lookupTransform('wrist_roll_link', 'base_link', rospy.Time(0))
 
     # display_trajectory = moveit_msgs.msg.DisplayTrajectory()
     # display_trajectory.trajectory_start = robot.get_current_state()
     # display_trajectory.trajectory.append(plan1)
     # display_trajectory_publisher.publish(display_trajectory)
+
 
 
 

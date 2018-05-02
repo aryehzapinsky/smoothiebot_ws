@@ -23,6 +23,11 @@ def get_model_pose(object_name, object_entity=None):
         model_state.relative_entity_name = object_entity
     return service_proxy(model_state).pose
 
+def set_model_pose(model_state):
+    service_proxy = rospy.ServiceProxy("/gazebo/set_model_state", gazebo_msgs.srv.SetModelState)
+    service_proxy.wait_for_service(timeout=5)
+    service_proxy(model_state)
+
 def copy_to_pose_stamped(pose, object_name):
     pose_stamped = geometry_msgs.msg.PoseStamped()
     pose_stamped.pose = pose
@@ -55,6 +60,7 @@ def fill_pose_stamped_from_tf(tf, frame_id):
     pose_stamped.pose.orientation.y = o[1]
     pose_stamped.pose.orientation.z = o[2]
     pose_stamped.pose.orientation.w = o[3]
+
 
     pose_stamped.header.frame_id = frame_id
 
