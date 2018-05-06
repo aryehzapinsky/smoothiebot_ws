@@ -48,15 +48,15 @@ if __name__ == "__main__":
     #listener.waitForTransform("/base_link", "/world", rospy.Time(), rospy.Duration(4.0))
     #apple_pose_stamped = fill_pose_stamped(0.696731, 0.014137, 0.77531, 0.71031, -0.01339, 0.013910, 0.70362)
     apple_pose = world_transform.get_model_pose("apple")
-    apple_pose_stamped = copy_to_pose_stamped(apple_pose, "base_link")
-    wm.add_mesh("apple", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitPlys/apple.ply', pose_stamped=apple_pose_stamped)
+    apple_pose_stamped = copy_to_pose_stamped(apple_pose, "world")
+    wm.add_mesh("apple", mesh_filepath='/home/ozymandias/.gazebo/models/apple/meshes/model.dae', pose_stamped=apple_pose_stamped)
     print("apple has been added")
 
     #banana_pose_stamped = fill_pose_stamped(0.633429, 0.193047, 0.784009, 0.702476, -0.002126, 0.002249, 0.711700)
-    banana_pose_stamped = copy_to_pose_stamped(world_transform.get_model_pose("banana"), "base_link")
+    banana_pose_stamped = copy_to_pose_stamped(world_transform.get_model_pose("banana"), "world")
     wm.add_mesh("banana", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitDae/banana.dae', pose_stamped=banana_pose_stamped)
     print("banana has been added")
 
-    # Need to scale orange file properly
-    #orange_pose_stamped = fill_pose_stamped(.5, 0, .5, 0, 0, 0, 1.0)
-    #wm.add_mesh("orange", mesh_filepath='/home/ozymandias/smoothiebot_ws/FruitPlys/orange.ply', pose_stamped=orange_pose_stamped)
+    #coke_pose_stamped = copy_to_pose_stamped(world_transform.get_model_pose("coke_can"), "base_link")
+    #wm.add_mesh("coke_can", mesh_filepath='/home/ozymandias/.gazebo/models/coke_can/meshes/coke_can.dae', pose_stamped=coke_pose_stamped)
+    #print("coke blender has been added")

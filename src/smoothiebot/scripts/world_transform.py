@@ -89,18 +89,18 @@ if __name__ == "__main__":
     fixed_point.pose.orientation.y = 0
     fixed_point.pose.orientation.z = 0
     fixed_point.pose.orientation.w = 1
-    fixed_point.header.frame_id = 'fixed_point'
+    fixed_point.header.frame_id = 'world'
 
-    wm.add_tf("world", fixed_point)
-    wm.add_tf('map', fixed_point)
+    wm.add_tf("base_link", fixed_point)
+    # wm.add_tf('map', fixed_point)
     # print("map to world created")
 
-    # fetch_pose = get_model_pose("fetch", "base_link")
-    # base_link_stamped = copy_to_pose_stamped(fetch_pose, "fixed_point") #originally was base_link
+    fetch_pose = get_model_pose("fetch")
+    base_link_stamped = copy_to_pose_stamped(fetch_pose, "world") #originally was base_link
     # base_link_stamped = adjust_rotation(base_link_stamped)
     # #print("~~~~\n{}\n~~~~\n".format(fetch_pose))
-    # wm.add_tf("map", base_link_stamped) #was world
-    # print("added map to fixed_point")
+    wm.add_tf("odom", base_link_stamped) #was world
+    print("added map to fixed_point")
 
     #rospy.wait_for_service("/map_server/get_loggers")
 

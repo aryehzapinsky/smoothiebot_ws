@@ -1,5 +1,7 @@
 <launch>
 
+  <env name="GAZEBO_MODEL_PATH" value="$(find smoothiebot)/models:$(find fetch_gazebo)/models:$(optenv GAZEBO_MODEL_PATH)" />
+
   <arg name="robot" default="fetch"/>
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
@@ -12,7 +14,7 @@
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="headless" value="$(arg headless)"/>
-    <arg name="world_name" value="$(find launcher)/worlds/world_of_fruit.world"/>        
+    <arg name="world_name" value="$(find launcher)/worlds/world_of_fruit_2.world"/>        
   </include>
 
   <!-- Oh, you wanted a robot? -->

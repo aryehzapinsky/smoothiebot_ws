@@ -10,10 +10,10 @@
                  <param name="config" value="$(find launcher)/configs/config.rviz"/>
         </include>
 
-        <!-- Navigation stuff -->
-        <include file="$(find fetch_navigation)/launch/fetch_nav.launch">
-                 <arg name="map_file" value="$(find launcher)/maps/four_bricks_map.yaml" />
-        </include>
+       <!-- Navigation stuff -->
+        <!--include file="$(find fetch_navigation)/launch/fetch_nav.launch"-->
+                 <!--arg name="map_file" value="$(find launcher)/maps/four_bricks_map.yaml" /-->
+        <!--/include-->
 
 
         <include file="$(find launcher)/launch/parameter_setting.launch"></include>

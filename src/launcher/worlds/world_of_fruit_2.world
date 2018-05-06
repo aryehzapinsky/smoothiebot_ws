@@ -1,0 +1,2177 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+    </model>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.1 0.1 0.1 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.5 -1</direction>
+    </light>
+    <model name='test_zone'>
+      <link name='link'>
+        <inertial>
+          <mass>15</mass>
+          <inertia>
+            <ixx>0</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0</iyy>
+            <iyz>0</iyz>
+            <izz>0.1</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>-8.12 8.8 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://test_zone/meshes/building.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>-8.12 8.8 0 1.57 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://test_zone/meshes/building.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <static>1</static>
+    </model>
+    <model name='table1'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='surface'>
+          <pose frame=''>0 0 0.755 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.913 0.913 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='column'>
+          <pose frame=''>0 0 0.37 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.042 0.042 0.74</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose frame=''>0 0 0.02 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.56 0.56 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1 0 -0.08 0 -0 0</pose>
+    </model>
+    <model name='table2'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='surface'>
+          <pose frame=''>0 0 0.755 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.913 0.913 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='column'>
+          <pose frame=''>0 0 0.37 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.042 0.042 0.74</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='base'>
+          <pose frame=''>0 0 0.02 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>0.56 0.56 0.04</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <mesh>
+              <uri>model://cafe_table/meshes/cafe_table.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>-3 5 0 0 -0 1.57</pose>
+    </model>
+    <model name='demo_cube'>
+      <static>0</static>
+      <link name='link'>
+        <inertial>
+          <mass>0.25</mass>
+          <inertia>
+            <ixx>0.001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.001</iyy>
+            <iyz>0</iyz>
+            <izz>0.001</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.06</size>
+            </box>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>30</mu>
+                <mu2>30</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>100</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.002</min_depth>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <geometry>
+            <box>
+              <size>0.06 0.06 0.06</size>
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Blue</name>
+            </script>
+          </material>
+        </visual>
+        <velocity_decay>
+          <linear>0</linear>
+          <angular>0</angular>
+        </velocity_decay>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.8 0.1 0.75 0 -0 0</pose>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='fetch'>
+      <link name='base_link'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>-0.028329 0.000913 0.103558 0 -0 0</pose>
+          <mass>83.4172</mass>
+          <inertia>
+            <ixx>6.20776</ixx>
+            <ixy>0.0213393</ixy>
+            <ixz>1.10946</ixz>
+            <iyy>6.49062</iyy>
+            <iyz>-0.0326202</iyz>
+            <izz>1.3596</izz>
+          </inertia>
+        </inertial>
+        <collision name='base_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/base_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+08</kp>
+                <kd>10</kd>
+                <max_vel>10</max_vel>
+                <min_depth>0.0005</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>0.1</mu>
+                <mu2>0.1</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__estop_link_collision_1'>
+          <pose frame=''>-0.12465 0.23892 0.31127 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/estop_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__laser_link_collision_2'>
+          <pose frame=''>0.235 0 0.2878 -3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/laser_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <collision name='base_link_fixed_joint_lump__torso_fixed_link_collision_3'>
+          <pose frame=''>-0.086875 0 0.377425 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/torso_fixed_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='base_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/base_link.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__estop_link_visual_1'>
+          <pose frame=''>-0.12465 0.23892 0.31127 1.5708 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/estop_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Red</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__laser_link_visual_2'>
+          <pose frame=''>0.235 0 0.2878 -3.14159 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/laser_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <uri>__default__</uri>
+              <name>__default__</name>
+            </script>
+          </material>
+        </visual>
+        <visual name='base_link_fixed_joint_lump__torso_fixed_link_visual_3'>
+          <pose frame=''>-0.086875 0 0.377425 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/torso_fixed_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <velocity_decay/>
+        <velocity_decay/>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <sensor name='base_laser' type='ray'>
+          <visualize>0</visualize>
+          <update_rate>15</update_rate>
+          <ray>
+            <scan>
+              <horizontal>
+                <samples>662</samples>
+                <resolution>1</resolution>
+                <min_angle>-1.91986</min_angle>
+                <max_angle>1.91986</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.05</min>
+              <max>25</max>
+              <resolution>0.01</resolution>
+            </range>
+            <noise>
+              <type>gaussian</type>
+              <mean>0</mean>
+              <stddev>0.02</stddev>
+            </noise>
+          </ray>
+          <plugin name='gazebo_ros_base_hokuyo_controller' filename='libgazebo_ros_laser.so'>
+            <topicName>/base_scan</topicName>
+            <frameName>laser_link</frameName>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose frame=''>0.235 0 0.2878 -3.14159 -0 0</pose>
+        </sensor>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='l_wheel_link'>
+        <pose frame=''>0.001291 0.18738 0.055325 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>4.3542</mass>
+          <inertia>
+            <ixx>0.0045</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0045</izz>
+          </inertia>
+        </inertial>
+        <collision name='l_wheel_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/l_wheel_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.003</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='l_wheel_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/l_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='l_wheel_joint' type='revolute'>
+        <child>l_wheel_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+        <physics>
+          <ode>
+            <implicit_spring_damper>1</implicit_spring_damper>
+            <cfm_damping>1</cfm_damping>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='r_wheel_link'>
+        <pose frame=''>0.001291 -0.18738 0.055325 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>4.3542</mass>
+          <inertia>
+            <ixx>0.0045</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.005</iyy>
+            <iyz>0</iyz>
+            <izz>0.0045</izz>
+          </inertia>
+        </inertial>
+        <collision name='r_wheel_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/r_wheel_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>500000</kp>
+                <kd>10</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.003</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>10</mu>
+                <mu2>10</mu2>
+                <fdir1>1 0 0</fdir1>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='r_wheel_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/r_wheel_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='r_wheel_joint' type='revolute'>
+        <child>r_wheel_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+        <physics>
+          <ode>
+            <implicit_spring_damper>1</implicit_spring_damper>
+            <cfm_damping>1</cfm_damping>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='torso_lift_link'>
+        <pose frame=''>-0.086875 0 0.37743 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>-0.000984 -0.000886 0.286874 0 -0 0</pose>
+          <mass>10.949</mass>
+          <inertia>
+            <ixx>0.36931</ixx>
+            <ixy>-3.0664e-06</ixy>
+            <ixz>-0.0147406</ixz>
+            <iyy>0.367812</iyy>
+            <iyz>-0.000535712</iyz>
+            <izz>0.0971639</izz>
+          </inertia>
+        </inertial>
+        <collision name='torso_lift_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/torso_lift_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='torso_lift_link_fixed_joint_lump__bellows_link2_collision_1'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/bellows_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='torso_lift_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/torso_lift_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='torso_lift_link_fixed_joint_lump__bellows_link2_visual_1'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/bellows_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='torso_lift_joint' type='prismatic'>
+        <child>torso_lift_link</child>
+        <parent>base_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.38615</upper>
+            <effort>450</effort>
+            <velocity>0.1</velocity>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='bellows_link'>
+        <pose frame=''>-0.086875 0 0.37743 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.019132 -0 -0.134862 0 -0 0</pose>
+          <mass>0.169374</mass>
+          <inertia>
+            <ixx>0.00331159</ixx>
+            <ixy>-8.9231e-18</ixy>
+            <ixz>-5.38622e-08</ixz>
+            <iyy>0.00174447</iyy>
+            <iyz>-8.06965e-17</iyz>
+            <izz>0.00169418</izz>
+          </inertia>
+        </inertial>
+        <collision name='bellows_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/bellows_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <friction>
+              <ode/>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='bellows_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/bellows_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Black</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='bellows_joint' type='prismatic'>
+        <child>bellows_link</child>
+        <parent>torso_lift_link</parent>
+        <axis>
+          <xyz>0 -0 -1</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.4</upper>
+            <effort>5</effort>
+            <velocity>0.1</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='head_pan_link'>
+        <pose frame=''>-0.03375 0 0.980431 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.0321 0.0161 0.039 0 -0 0</pose>
+          <mass>2.2556</mass>
+          <inertia>
+            <ixx>0.0129</ixx>
+            <ixy>0.0002</ixy>
+            <ixz>0.0007</ixz>
+            <iyy>0.0095</iyy>
+            <iyz>-0</iyz>
+            <izz>0.0184</izz>
+          </inertia>
+        </inertial>
+        <collision name='head_pan_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/head_pan_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='head_pan_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/head_pan_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='head_pan_joint' type='revolute'>
+        <child>head_pan_link</child>
+        <parent>torso_lift_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.57</lower>
+            <upper>1.57</upper>
+            <effort>0.32</effort>
+            <velocity>1.57</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='head_tilt_link'>
+        <pose frame=''>0.10878 0 1.03843 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.0081 0.0025 0.0113 0 -0 0</pose>
+          <mass>0.9087</mass>
+          <inertia>
+            <ixx>0.0061</ixx>
+            <ixy>-0</ixy>
+            <ixz>0.0002</ixz>
+            <iyy>0.0014</iyy>
+            <iyz>-0.0001</iyz>
+            <izz>0.0061</izz>
+          </inertia>
+        </inertial>
+        <collision name='head_tilt_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/head_tilt_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='head_tilt_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/head_tilt_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <sensor name='camera' type='depth'>
+          <always_on>1</always_on>
+          <update_rate>15</update_rate>
+          <camera name='__default__'>
+            <horizontal_fov>1.0472</horizontal_fov>
+            <image>
+              <format>B8G8R8</format>
+              <width>640</width>
+              <height>480</height>
+            </image>
+            <clip>
+              <near>0.05</near>
+              <far>50</far>
+            </clip>
+          </camera>
+          <plugin name='head_camera_controller' filename='libgazebo_ros_openni_kinect.so'>
+            <baseline>0.1</baseline>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>15.0</updateRate>
+            <cameraName>head_camera</cameraName>
+            <imageTopicName>/head_camera/rgb/image_raw</imageTopicName>
+            <cameraInfoTopicName>/head_camera/rgb/camera_info</cameraInfoTopicName>
+            <depthImageTopicName>/head_camera/depth_registered/image_raw</depthImageTopicName>
+            <depthImageCameraInfoTopicName>/head_camera/depth_registered/camera_info</depthImageCameraInfoTopicName>
+            <pointCloudTopicName>/head_camera/depth_registered/points</pointCloudTopicName>
+            <frameName>head_camera_rgb_optical_frame</frameName>
+            <pointCloudCutoff>0.35</pointCloudCutoff>
+            <pointCloudCutoffMax>4.5</pointCloudCutoffMax>
+            <CxPrime>0</CxPrime>
+            <Cx>0</Cx>
+            <Cy>0</Cy>
+            <focalLength>0</focalLength>
+            <hackBaseline>0</hackBaseline>
+            <robotNamespace>/</robotNamespace>
+          </plugin>
+          <pose frame=''>0.055 0.02 0.0225 0 -0 0</pose>
+        </sensor>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='head_tilt_joint' type='revolute'>
+        <child>head_tilt_link</child>
+        <parent>head_pan_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-0.76</lower>
+            <upper>1.45</upper>
+            <effort>0.68</effort>
+            <velocity>1.57</velocity>
+          </limit>
+          <dynamics>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='shoulder_pan_link'>
+        <pose frame=''>0.03265 0 0.72601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.0927 -0.0056 0.0564 0 -0 0</pose>
+          <mass>2.5587</mass>
+          <inertia>
+            <ixx>0.0043</ixx>
+            <ixy>-0.0001</ixy>
+            <ixz>0.001</ixz>
+            <iyy>0.0087</iyy>
+            <iyz>-0.0001</iyz>
+            <izz>0.0087</izz>
+          </inertia>
+        </inertial>
+        <collision name='shoulder_pan_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/shoulder_pan_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='shoulder_pan_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/shoulder_pan_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='shoulder_pan_joint' type='revolute'>
+        <child>shoulder_pan_link</child>
+        <parent>torso_lift_link</parent>
+        <axis>
+          <xyz>0 0 1</xyz>
+          <limit>
+            <lower>-1.6056</lower>
+            <upper>1.6056</upper>
+            <effort>33.82</effort>
+            <velocity>1.256</velocity>
+          </limit>
+          <dynamics>
+            <damping>1</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='shoulder_lift_link'>
+        <pose frame=''>0.14965 0 0.78601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.1432 0.0072 -0.0001 0 -0 0</pose>
+          <mass>2.6615</mass>
+          <inertia>
+            <ixx>0.0028</ixx>
+            <ixy>-0.0021</ixy>
+            <ixz>-0</ixz>
+            <iyy>0.0111</iyy>
+            <iyz>-0</iyz>
+            <izz>0.0112</izz>
+          </inertia>
+        </inertial>
+        <collision name='shoulder_lift_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/shoulder_lift_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='shoulder_lift_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/shoulder_lift_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='shoulder_lift_joint' type='revolute'>
+        <child>shoulder_lift_link</child>
+        <parent>shoulder_pan_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-1.221</lower>
+            <upper>1.518</upper>
+            <effort>131.76</effort>
+            <velocity>1.454</velocity>
+          </limit>
+          <dynamics>
+            <damping>1</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='upperarm_roll_link'>
+        <pose frame=''>0.36865 0 0.78601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.1165 0.0014 0 0 -0 0</pose>
+          <mass>2.3311</mass>
+          <inertia>
+            <ixx>0.0019</ixx>
+            <ixy>-0.0001</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0045</iyy>
+            <iyz>0</iyz>
+            <izz>0.0047</izz>
+          </inertia>
+        </inertial>
+        <collision name='upperarm_roll_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/upperarm_roll_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='upperarm_roll_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/upperarm_roll_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='upperarm_roll_joint' type='revolute'>
+        <child>upperarm_roll_link</child>
+        <parent>shoulder_lift_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='elbow_flex_link'>
+        <pose frame=''>0.50165 0 0.78601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.1279 0.0073 0 0 -0 0</pose>
+          <mass>2.1299</mass>
+          <inertia>
+            <ixx>0.0024</ixx>
+            <ixy>-0.0016</ixy>
+            <ixz>0</ixz>
+            <iyy>0.0082</iyy>
+            <iyz>-0</iyz>
+            <izz>0.0084</izz>
+          </inertia>
+        </inertial>
+        <collision name='elbow_flex_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/elbow_flex_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='elbow_flex_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/elbow_flex_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='elbow_flex_joint' type='revolute'>
+        <child>elbow_flex_link</child>
+        <parent>upperarm_roll_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-2.251</lower>
+            <upper>2.251</upper>
+            <effort>66.18</effort>
+            <velocity>1.521</velocity>
+          </limit>
+          <dynamics>
+            <damping>1</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='forearm_roll_link'>
+        <pose frame=''>0.69865 0 0.78601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.1097 -0.0266 0 0 -0 0</pose>
+          <mass>1.6563</mass>
+          <inertia>
+            <ixx>0.0016</ixx>
+            <ixy>-0.0003</ixy>
+            <ixz>0</ixz>
+            <iyy>0.003</iyy>
+            <iyz>-0</iyz>
+            <izz>0.0035</izz>
+          </inertia>
+        </inertial>
+        <collision name='forearm_roll_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/forearm_roll_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='forearm_roll_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/forearm_roll_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='forearm_roll_joint' type='revolute'>
+        <child>forearm_roll_link</child>
+        <parent>elbow_flex_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+        <physics>
+          <ode>
+            <implicit_spring_damper>1</implicit_spring_damper>
+            <cfm_damping>1</cfm_damping>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='wrist_flex_link'>
+        <pose frame=''>0.82315 0 0.78601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.0882 0.0009 -0.0001 0 -0 0</pose>
+          <mass>1.725</mass>
+          <inertia>
+            <ixx>0.0018</ixx>
+            <ixy>-0.0001</ixy>
+            <ixz>-0</ixz>
+            <iyy>0.0042</iyy>
+            <iyz>0</iyz>
+            <izz>0.0042</izz>
+          </inertia>
+        </inertial>
+        <collision name='wrist_flex_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/wrist_flex_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='wrist_flex_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/wrist_flex_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='wrist_flex_joint' type='revolute'>
+        <child>wrist_flex_link</child>
+        <parent>forearm_roll_link</parent>
+        <axis>
+          <xyz>0 1 0</xyz>
+          <limit>
+            <lower>-2.16</lower>
+            <upper>2.16</upper>
+            <effort>25.7</effort>
+            <velocity>2.268</velocity>
+          </limit>
+          <dynamics>
+            <damping>1</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='wrist_roll_link'>
+        <pose frame=''>0.96165 0 0.78601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>0.070966 -5.9e-05 -0.001577 0 -0 0</pose>
+          <mass>1.6529</mass>
+          <inertia>
+            <ixx>0.00140031</ixx>
+            <ixy>4.16123e-06</ixy>
+            <ixz>1.24837e-05</ixz>
+            <iyy>0.00255747</iyy>
+            <iyz>-9.32314e-08</iyz>
+            <izz>0.00305722</izz>
+          </inertia>
+        </inertial>
+        <collision name='wrist_roll_link_collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/wrist_roll_link_collision.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <collision name='wrist_roll_link_fixed_joint_lump__gripper_link_collision_1'>
+          <pose frame=''>0.16645 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/gripper_link.STL</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='wrist_roll_link_visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/wrist_roll_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <visual name='wrist_roll_link_fixed_joint_lump__gripper_link_visual_1'>
+          <pose frame=''>0.16645 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/gripper_link.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <joint name='wrist_roll_joint' type='revolute'>
+        <child>wrist_roll_link</child>
+        <parent>wrist_flex_link</parent>
+        <axis>
+          <xyz>1 0 0</xyz>
+          <limit>
+            <lower>-1e+16</lower>
+            <upper>1e+16</upper>
+          </limit>
+          <dynamics>
+            <damping>5</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+        <physics>
+          <ode>
+            <implicit_spring_damper>1</implicit_spring_damper>
+            <cfm_damping>1</cfm_damping>
+            <limit>
+              <cfm>0</cfm>
+              <erp>0.2</erp>
+            </limit>
+          </ode>
+        </physics>
+      </joint>
+      <link name='l_gripper_finger_link'>
+        <pose frame=''>1.1281 -0.015425 0.78601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>-0.01 0 0 0 -0 0</pose>
+          <mass>0.0798</mass>
+          <inertia>
+            <ixx>0.002</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0</iyy>
+            <iyz>0</iyz>
+            <izz>0</izz>
+          </inertia>
+        </inertial>
+        <collision name='l_gripper_finger_link_collision'>
+          <pose frame=''>0 -0.101425 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/l_gripper_finger_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>100</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>30</mu>
+                <mu2>30</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='l_gripper_finger_link_visual'>
+          <pose frame=''>0 -0.101425 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/l_gripper_finger_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='l_gripper_finger_joint' type='prismatic'>
+        <child>l_gripper_finger_link</child>
+        <parent>wrist_roll_link</parent>
+        <axis>
+          <xyz>0 -1 0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.05</upper>
+            <effort>60</effort>
+            <velocity>0.05</velocity>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <link name='r_gripper_finger_link'>
+        <pose frame=''>1.1281 0.015425 0.78601 0 -0 0</pose>
+        <inertial>
+          <pose frame=''>-0.01 0 0 0 -0 0</pose>
+          <mass>0.0798</mass>
+          <inertia>
+            <ixx>0.002</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0</iyy>
+            <iyz>0</iyz>
+            <izz>0</izz>
+          </inertia>
+        </inertial>
+        <collision name='r_gripper_finger_link_collision'>
+          <pose frame=''>0 0.101425 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/r_gripper_finger_link.STL</uri>
+            </mesh>
+          </geometry>
+          <surface>
+            <contact>
+              <ode>
+                <kp>1e+06</kp>
+                <kd>100</kd>
+                <max_vel>1</max_vel>
+                <min_depth>0.001</min_depth>
+              </ode>
+            </contact>
+            <friction>
+              <ode>
+                <mu>30</mu>
+                <mu2>30</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='r_gripper_finger_link_visual'>
+          <pose frame=''>0 0.101425 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <scale>1 1 1</scale>
+              <uri>/home/ozymandias/smoothiebot_ws/src/fetch_ros/fetch_description/meshes/r_gripper_finger_link.STL</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <script>
+              <name>Gazebo/Grey</name>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+            </script>
+          </material>
+        </visual>
+        <gravity>1</gravity>
+        <velocity_decay/>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+      </link>
+      <joint name='r_gripper_finger_joint' type='prismatic'>
+        <child>r_gripper_finger_link</child>
+        <parent>wrist_roll_link</parent>
+        <axis>
+          <xyz>0 1 -0</xyz>
+          <limit>
+            <lower>0</lower>
+            <upper>0.05</upper>
+            <effort>60</effort>
+            <velocity>0.05</velocity>
+          </limit>
+          <dynamics>
+            <damping>100</damping>
+            <friction>0</friction>
+            <spring_reference>0</spring_reference>
+            <spring_stiffness>0</spring_stiffness>
+          </dynamics>
+          <use_parent_model_frame>1</use_parent_model_frame>
+        </axis>
+      </joint>
+      <static>0</static>
+      <plugin name='fetch_gazebo_plugin' filename='libfetch_gazebo_plugin.so'>
+        <robotNamespace>/</robotNamespace>
+      </plugin>
+      <pose frame=''>0 0 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>477 790000000</sim_time>
+      <real_time>102 784351754</real_time>
+      <wall_time>1525633292 210116998</wall_time>
+      <iterations>13971</iterations>
+      <model name='apple'>
+        <pose frame=''>0.687145 -0.315791 0.69525 1.58323 -0.02965 0.989789</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.687145 -0.315791 0.69525 1.58323 -0.02965 0.989789</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.000367 0.002339 -0.005849 -2.0164 0.929417 0.114055</acceleration>
+          <wrench>0.000143 0.000912 -0.002281 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='banana'>
+        <pose frame=''>0.74421 0.059141 0.703808 1.55384 -0.007261 -0.116128</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.74421 0.059141 0.703808 1.55384 -0.007261 -0.116128</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0.012295 -0.017591 0.052143 -0.7654 -1.53341 3.08583</acceleration>
+          <wrench>0.004795 -0.006861 0.020336 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='blender'>
+        <pose frame=''>1.18786 0.205638 0.583692 2.17807 -1.06418 -2.51982</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1.18786 0.205638 0.583692 2.17807 -1.06418 -2.51982</pose>
+          <velocity>0.001814 -3.3e-05 0.003392 -0.002621 -0.014588 0.001259</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>-0.033097 0.024306 -0.093929 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='demo_cube'>
+        <pose frame=''>0.746689 0.319385 0.722999 0 0 -0.082834</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0.746689 0.319385 0.722999 0 0 -0.082834</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='fetch'>
+        <pose frame=''>-0.048803 -0.00073 0.001118 0.001053 -0.004712 3.06959</pose>
+        <scale>1 1 1</scale>
+        <link name='base_link'>
+          <pose frame=''>-0.048803 -0.00073 0.001118 0.001053 -0.004712 3.06959</pose>
+          <velocity>-0.000279 -8.7e-05 9.3e-05 0.000234 0.000419 0.002018</velocity>
+          <acceleration>-0.261947 -0.021336 0.042626 1.10737 0.523959 2.71091</acceleration>
+          <wrench>-21.8509 -1.77975 3.55571 0 -0 0</wrench>
+        </link>
+        <link name='bellows_link'>
+          <pose frame=''>0.039617 -0.006716 0.371499 0.001053 -0.004711 3.06959</pose>
+          <velocity>-0.000108 5e-06 0.000271 0.0002 0.00041 0.002015</velocity>
+          <acceleration>-0.182343 -0.006585 -0.025824 0.6304 0.585837 1.56233</acceleration>
+          <wrench>-0.030884 -0.001115 -0.004374 0 -0 0</wrench>
+        </link>
+        <link name='elbow_flex_link'>
+          <pose frame=''>-0.135356 -0.165774 0.440787 -3.10318 0.019592 1.44581</pose>
+          <velocity>-0.000215 -0.00043 0.000141 0.001406 0.000109 -0.001716</velocity>
+          <acceleration>-0.015277 0.098132 -0.02983 -2.0809 0.256947 -2.96246</acceleration>
+          <wrench>-0.032538 0.209012 -0.063534 0 -0 0</wrench>
+        </link>
+        <link name='forearm_roll_link'>
+          <pose frame=''>-0.110803 0.029652 0.436928 -3.10318 0.019592 1.44582</pose>
+          <velocity>0.000121 -0.000465 0.000412 0.001254 -0.001042 -0.0017</velocity>
+          <acceleration>0.111603 0.107158 -0.124542 1.76197 -0.529492 -2.07607</acceleration>
+          <wrench>0.184847 0.177485 -0.206279 0 -0 0</wrench>
+        </link>
+        <link name='head_pan_link'>
+          <pose frame=''>-0.010459 -0.002461 0.981379 0.001054 -0.004711 3.06939</pose>
+          <velocity>0.000135 -0.000233 8e-05 0.00021 0.000413 -0.000995</velocity>
+          <acceleration>0.242132 -0.246236 0.04908 0.304597 0.617728 -1.40512</acceleration>
+          <wrench>0.546152 -0.555409 0.110705 0 -0 0</wrench>
+        </link>
+        <link name='head_tilt_link'>
+          <pose frame=''>-0.152339 0.007863 1.04005 0.001054 -0.002384 3.06939</pose>
+          <velocity>0.00017 -0.000104 0.000141 -0.000302 -0.00673 -0.000993</velocity>
+          <acceleration>0.290103 -0.087233 0.121199 -2.75513 -0.413646 0.187688</acceleration>
+          <wrench>0.263616 -0.079269 0.110134 0 -0 0</wrench>
+        </link>
+        <link name='l_gripper_finger_link'>
+          <pose frame=''>-0.151079 0.138835 0.740983 -0.504883 -1.49133 -1.19298</pose>
+          <velocity>0.166836 -0.021483 -0.005911 -0.000334 -0.000481 0.000443</velocity>
+          <acceleration>333.041 -41.9677 -13.0659 -2.60297 0 0.564388</acceleration>
+          <wrench>26.5767 -3.34903 -1.04266 0 -0 0</wrench>
+        </link>
+        <link name='l_wheel_link'>
+          <pose frame=''>-0.063305 -0.187493 0.056646 0.001945 0.999116 3.07123</pose>
+          <velocity>0.00012 -0.000109 4.3e-05 0.001787 0.003159 0.00171</velocity>
+          <acceleration>0.028472 -0.067186 0.008541 1.07783 0.690639 1.56252</acceleration>
+          <wrench>0.123971 -0.292543 0.03719 0 -0 0</wrench>
+        </link>
+        <link name='r_gripper_finger_link'>
+          <pose frame=''>-0.021605 0.12247 0.735968 -0.504873 -1.49133 -1.19299</pose>
+          <velocity>-0.165834 0.020536 0.006979 0.000219 0.000452 -3.2e-05</velocity>
+          <acceleration>-332.312 42.1218 12.7137 3.14159 1.33927 0.930501</acceleration>
+          <wrench>-26.5185 3.36132 1.01455 0 -0 0</wrench>
+        </link>
+        <link name='r_wheel_link'>
+          <pose frame=''>-0.036348 0.186297 0.056252 3.13904 1.1494 -0.074322</pose>
+          <velocity>-0.000618 -5.2e-05 0.00015 0.001142 -0.011946 0.001548</velocity>
+          <acceleration>-0.424094 -0.040741 -0.009438 1.11738 -0.751292 2.23118</acceleration>
+          <wrench>-1.84659 -0.177395 -0.041094 0 -0 0</wrench>
+        </link>
+        <link name='shoulder_lift_link'>
+          <pose frame=''>-0.114724 -0.108781 0.787529 -0.024958 1.39774 -1.91814</pose>
+          <velocity>3e-06 -0.000308 0.000108 -0.000347 0.000574 -0.000443</velocity>
+          <acceleration>0.009464 -0.141766 0.038055 -0.421343 -0.14461 0.349214</acceleration>
+          <wrench>0.02519 -0.377309 0.101284 0 -0 0</wrench>
+        </link>
+        <link name='shoulder_pan_link'>
+          <pose frame=''>-0.077902 0.002135 0.727274 -0.004306 -0.00219 -1.89355</pose>
+          <velocity>1.7e-05 -0.000309 0.000117 0.000245 0.000458 -0.000429</velocity>
+          <acceleration>0.097096 -0.318678 0.073092 1.21293 -0.491238 -0.48222</acceleration>
+          <wrench>0.248438 -0.815401 0.187022 0 -0 0</wrench>
+        </link>
+        <link name='torso_lift_link'>
+          <pose frame=''>0.039648 -0.006711 0.378135 0.001053 -0.004712 3.06959</pose>
+          <velocity>-0.000106 3e-06 6e-05 0.000213 0.000407 0.00186</velocity>
+          <acceleration>0.059591 -0.094591 0.005905 0.236023 0.568596 1.30564</acceleration>
+          <wrench>0.652459 -1.03567 0.064656 0 -0 0</wrench>
+        </link>
+        <link name='upperarm_roll_link'>
+          <pose frame=''>-0.12756 -0.14424 0.5718 -0.224848 1.39774 -1.91813</pose>
+          <velocity>-0.000132 -0.000385 0.000129 -0.000425 0.000369 -0.001652</velocity>
+          <acceleration>-0.094378 0.094492 0.009409 -2.88214 -0.86734 3.01695</acceleration>
+          <wrench>-0.220004 0.220271 0.021934 0 -0 0</wrench>
+        </link>
+        <link name='wrist_flex_link'>
+          <pose frame=''>-0.095287 0.153157 0.434489 -0.504827 -1.49132 -1.19304</pose>
+          <velocity>0.000333 -0.000488 0.000583 -0.000406 -0.000837 -0.001649</velocity>
+          <acceleration>-0.044043 0.118045 -0.069318 0.185602 -1.39897 -0.488759</acceleration>
+          <wrench>-0.075975 0.203627 -0.119573 0 -0 0</wrench>
+        </link>
+        <link name='wrist_roll_link'>
+          <pose frame=''>-0.091231 0.142937 0.572551 -0.504825 -1.49132 -1.19304</pose>
+          <velocity>0.000204 -0.000433 0.000591 -0.000346 -0.001003 0.000574</velocity>
+          <acceleration>-0.270297 0.154907 -0.061842 -2.75124 1.18651 -1.64416</acceleration>
+          <wrench>-0.446774 0.256046 -0.102218 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='table1'>
+        <pose frame=''>1 0 -0.08 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>1 0 -0.08 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='table2'>
+        <pose frame=''>-3 5 0 0 -0 1.57</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>-3 5 0 0 -0 1.57</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='test_zone'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>1.72558 0.424198 3.58738 0 1.1938 -2.95899</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+    <model name='apple'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0.00058</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00058</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://apple/meshes/apple.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+                <max_vel>0.1</max_vel>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://apple/meshes/apple.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.7872 -0.3588 0 0 -0 0</pose>
+    </model>
+    <model name='blender'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0</iyy>
+            <iyz>0</iyz>
+            <izz>0</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://blender/meshes/model.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>100</kd>
+                <min_depth>0.001</min_depth>
+                <max_vel>0.1</max_vel>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://blender/meshes/model.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>1.93094 -0.035909 0 0 -0 0</pose>
+    </model>
+    <model name='banana'>
+      <link name='link'>
+        <inertial>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <mass>0.39</mass>
+          <inertia>
+            <ixx>0.00058</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00058</iyy>
+            <iyz>0</iyz>
+            <izz>0.00019</izz>
+          </inertia>
+        </inertial>
+        <collision name='collision'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://banana/meshes/banana.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+          <surface>
+            <friction>
+              <ode>
+                <mu>1</mu>
+                <mu2>1</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <contact>
+              <ode>
+                <kp>1e+07</kp>
+                <kd>1</kd>
+                <min_depth>0.001</min_depth>
+                <max_vel>0.1</max_vel>
+              </ode>
+            </contact>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>model://banana/meshes/banana.dae</uri>
+              <scale>1 1 1</scale>
+            </mesh>
+          </geometry>
+        </visual>
+        <self_collide>0</self_collide>
+        <kinematic>0</kinematic>
+        <gravity>1</gravity>
+      </link>
+      <pose frame=''>0.875342 -0.442401 0 0 -0 0</pose>
+    </model>
+  </world>
+</sdf>
